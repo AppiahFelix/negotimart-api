@@ -15,7 +15,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-CSV_PATH = os.getenv("CSV_PATH", "products_dataset_ghs.csv")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CSV_PATH = os.getenv("CSV_PATH", os.path.join(BASE_DIR, "products_dataset_ghs.csv"))
 
 def load_products():
     products = []
