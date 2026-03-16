@@ -2,13 +2,12 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional
-import pandas as pd
+import csv
 import math
 import os
 
 app = FastAPI(title="NegotiMart API", version="1.0.0")
 
-# Allow all origins so your frontend can call this API
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -19,34 +18,32 @@ app.add_middleware(
 CSV_PATH = os.getenv("CSV_PATH", "products_dataset_ghs.csv")
 
 def load_products():
-    df = pd.read_csv(CSV_PATH)
-    # Clean up column names (strip whitespace)
-    df.columns = df.columns.str.strip()
-    # Replace NaN with None
-    df = df.where(pd.notnull(df), None)
-    return df
+    products = []
+    with open(CSV_PATH, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            try:
+                products.append({
+                    "product_id":           int(row["product_id"]),
+                    "product_name":         row["product_name"].strip(),
+                    "category":             row["category"].strip(),
+                    "brand":                row["brand"].strip(),
+                    "condition":            row["condition"].strip(),
+                    "original_price":       round(float(row["original_price_ghs"]), 2),
+                    "selling_price":        round(float(row["selling_price_ghs"]), 2),
+                    "min_acceptable_price": round(float(row["min_acceptable_price_ghs"]), 2),
+                    "discount_percent":     int(float(row["discount_percent"])),
+                    "stock_quantity":       int(float(row["stock_quantity"])),
+                    "rating":               round(float(row["rating"]), 1),
+                    "num_reviews":          int(float(row["num_reviews"])),
+                    "negotiable":           row["negotiable"].strip().lower() == "yes",
+                    "currency":             "GHS",
+                    "image":                None,
+                })
+            except Exception:
+                continue
+    return products
 
-def row_to_dict(row):
-    return {
-        "product_id":           int(row["product_id"]),
-        "product_name":         str(row["product_name"]),
-        "category":             str(row["category"]),
-        "brand":                str(row["brand"]),
-        "condition":            str(row["condition"]),
-        "original_price":       round(float(row["original_price_ghs"]), 2),
-        "selling_price":        round(float(row["selling_price_ghs"]), 2),
-        "min_acceptable_price": round(float(row["min_acceptable_price_ghs"]), 2),
-        "discount_percent":     int(row["discount_percent"]),
-        "stock_quantity":       int(row["stock_quantity"]),
-        "rating":               round(float(row["rating"]), 1),
-        "num_reviews":          int(row["num_reviews"]),
-        "negotiable":           str(row["negotiable"]).strip().lower() == "yes",
-        "currency":             "GHS",
-        "image":                None,  # image URLs managed on frontend
-    }
-
-
-# ── ROUTES ────────────────────────────────────────────────────────────────────
 
 @app.get("/")
 def root():
@@ -55,103 +52,87 @@ def root():
 
 @app.get("/products")
 def get_products(
-    category: Optional[str] = Query(None, description="Filter by category"),
-    negotiable: Optional[bool] = Query(None, description="Filter negotiable products"),
-    search: Optional[str] = Query(None, description="Search by product name"),
-    min_price: Optional[float] = Query(None, description="Minimum selling price (GHS)"),
-    max_price: Optional[float] = Query(None, description="Maximum selling price (GHS)"),
-    page: int = Query(1, ge=1, description="Page number"),
-    limit: int = Query(20, ge=1, le=100, description="Results per page"),
+    category: Optional[str] = Query(None),
+    negotiable: Optional[bool] = Query(None),
+    search: Optional[str] = Query(None),
+    min_price: Optional[float] = Query(None),
+    max_price: Optional[float] = Query(None),
+    page: int = Query(1, ge=1),
+    limit: int = Query(20, ge=1, le=100),
 ):
-    """Get all products with optional filtering and pagination."""
-    df = load_products()
+    products = load_products()
 
     if category:
-        df = df[df["category"].str.lower() == category.lower()]
+        products = [p for p in products if p["category"].lower() == category.lower()]
     if negotiable is not None:
-        mask = df["negotiable"].str.strip().str.lower() == "yes"
-        df = df[mask] if negotiable else df[~mask]
+        products = [p for p in products if p["negotiable"] == negotiable]
     if search:
-        df = df[df["product_name"].str.lower().str.contains(search.lower(), na=False)]
+        products = [p for p in products if search.lower() in p["product_name"].lower()]
     if min_price is not None:
-        df = df[df["selling_price_ghs"] >= min_price]
+        products = [p for p in products if p["selling_price"] >= min_price]
     if max_price is not None:
-        df = df[df["selling_price_ghs"] <= max_price]
+        products = [p for p in products if p["selling_price"] <= max_price]
 
-    total = len(df)
+    total = len(products)
     total_pages = math.ceil(total / limit)
     start = (page - 1) * limit
     end = start + limit
-    page_df = df.iloc[start:end]
 
     return {
         "total": total,
         "page": page,
         "limit": limit,
         "total_pages": total_pages,
-        "products": [row_to_dict(row) for _, row in page_df.iterrows()],
+        "products": products[start:end],
     }
 
 
 @app.get("/products/{product_id}")
 def get_product(product_id: int):
-    """Get a single product by ID."""
-    df = load_products()
-    row = df[df["product_id"] == product_id]
-    if row.empty:
-        raise HTTPException(status_code=404, detail=f"Product {product_id} not found")
-    return row_to_dict(row.iloc[0])
+    products = load_products()
+    for p in products:
+        if p["product_id"] == product_id:
+            return p
+    raise HTTPException(status_code=404, detail=f"Product {product_id} not found")
 
 
 @app.get("/categories")
 def get_categories():
-    """Get all unique product categories."""
-    df = load_products()
-    categories = sorted(df["category"].dropna().unique().tolist())
-    return {"categories": categories}
-
-
-@app.get("/products/category/{category}")
-def get_by_category(category: str, page: int = 1, limit: int = 20):
-    """Get products by category."""
-    return get_products(category=category, page=page, limit=limit)
+    products = load_products()
+    cats = sorted(set(p["category"] for p in products))
+    return {"categories": cats}
 
 
 @app.get("/stats")
 def get_stats():
-    """Get store statistics."""
-    df = load_products()
-    negotiable_count = (df["negotiable"].str.strip().str.lower() == "yes").sum()
+    products = load_products()
+    neg = sum(1 for p in products if p["negotiable"])
+    avg_price = round(sum(p["selling_price"] for p in products) / len(products), 2) if products else 0
+    avg_discount = round(sum(p["discount_percent"] for p in products) / len(products), 1) if products else 0
+    cats = set(p["category"] for p in products)
     return {
-        "total_products":     len(df),
-        "total_categories":   df["category"].nunique(),
-        "negotiable_products": int(negotiable_count),
-        "avg_selling_price":  round(float(df["selling_price_ghs"].mean()), 2),
-        "avg_discount":       round(float(df["discount_percent"].mean()), 1),
-        "currency":           "GHS",
+        "total_products": len(products),
+        "total_categories": len(cats),
+        "negotiable_products": neg,
+        "avg_selling_price": avg_price,
+        "avg_discount": avg_discount,
+        "currency": "GHS",
     }
 
 
-# Pydantic model for negotiation price check
 class NegotiationCheck(BaseModel):
     product_id: int
     offered_price: float
 
 @app.post("/negotiate/check")
 def check_offer(body: NegotiationCheck):
-    """
-    Check if an offered price is acceptable.
-    Returns whether to accept, reject, or counter-offer.
-    The min_acceptable_price is never exposed — only the decision.
-    """
-    df = load_products()
-    row = df[df["product_id"] == body.product_id]
-    if row.empty:
+    products = load_products()
+    product = next((p for p in products if p["product_id"] == body.product_id), None)
+    if not product:
         raise HTTPException(status_code=404, detail="Product not found")
 
-    product = row.iloc[0]
-    selling_price = float(product["selling_price_ghs"])
-    min_price = float(product["min_acceptable_price_ghs"])
+    selling_price = product["selling_price"]
+    min_price = product["min_acceptable_price"]
     offered = body.offered_price
 
     if offered >= selling_price:
@@ -159,11 +140,6 @@ def check_offer(body: NegotiationCheck):
     elif offered >= min_price:
         return {"decision": "accept", "final_price": round(offered, 2), "message": "Deal accepted!"}
     else:
-        # Counter-offer at midpoint between offer and selling price
         counter = round((offered + selling_price) / 2, 2)
         counter = max(counter, min_price)
-        return {
-            "decision": "counter",
-            "counter_price": counter,
-            "message": f"We can offer GH₵{counter:,.2f}"
-        }
+        return {"decision": "counter", "counter_price": counter, "message": f"We can offer GH₵{counter:,.2f}"}
