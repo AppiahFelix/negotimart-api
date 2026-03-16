@@ -1,0 +1,521 @@
+product_id,product_name,category,brand,condition,original_price_ghs,selling_price_ghs,discount_percent,min_acceptable_price_ghs,stock_quantity,rating,num_reviews,negotiable,currency
+1001,PeakEdge Mouse,Electronics,PeakEdge,New,10645.47,9580.92,10,6936.9,124,4.3,1906,Yes,GHS
+1002,PeakEdge Remote Control Car,Toys,PeakEdge,New,744.93,744.93,0,564.3,55,4.5,1279,Yes,GHS
+1003,PeakEdge Biography,Books,PeakEdge,New,539.25,485.32,10,408.77,124,3.8,388,Yes,GHS
+1004,PeakEdge Perfume,Beauty,PeakEdge,Open Box,1876.84,1689.16,10,1276.24,137,3.8,163,Yes,GHS
+1005,NeoCore Tennis Racket,Sports,NeoCore,Open Box,6301.13,5671.02,10,4073.02,12,4.4,1445,No,GHS
+1006,BoldCraft Nail Polish,Beauty,BoldCraft,New,958.05,766.44,20,555.81,25,3.8,341,Yes,GHS
+1007,SwiftMart Doll,Toys,SwiftMart,Open Box,2913.93,2622.54,10,2172.38,115,3.1,1325,No,GHS
+1008,PrimeLine Blender,Kitchen,PrimeLine,New,1610.49,1449.44,10,1193.73,81,3.1,536,Yes,GHS
+1009,BoldCraft Nail Polish,Beauty,BoldCraft,Refurbished,1376.18,1376.18,0,1088.71,152,4.1,1173,Yes,GHS
+1010,EcoBrand Serum,Beauty,EcoBrand,New,1997.29,1797.56,10,1431.2,15,4.6,1387,Yes,GHS
+1011,EcoBrand Jacket,Clothing,EcoBrand,New,1102.72,1047.58,5,773.51,142,3.2,1041,Yes,GHS
+1012,PeakEdge Smartwatch,Electronics,PeakEdge,New,29547.29,26592.56,10,22469.28,159,3.2,932,No,GHS
+1013,NovaTech LEGO Set,Toys,NovaTech,New,3038.51,2886.58,5,2194.94,126,4.6,1362,Yes,GHS
+1014,SkyBlue Lamp,Home & Garden,SkyBlue,New,5192.7,5192.7,0,4344.99,83,4.9,1798,Yes,GHS
+1015,SkyBlue Serum,Beauty,SkyBlue,Open Box,1339.52,1272.54,5,903.07,16,4.6,38,Yes,GHS
+1016,PrimeLine Sofa,Home & Garden,PrimeLine,Refurbished,18600.83,15810.71,15,11629.06,109,4.9,1644,Yes,GHS
+1017,PrimeLine Bicycle,Sports,PrimeLine,Open Box,10887.53,8710.02,20,7303.13,72,3.9,1699,No,GHS
+1018,SkyBlue Cookware Set,Kitchen,SkyBlue,New,2022.11,1617.69,20,1323.7,64,3.6,1348,Yes,GHS
+1019,SkyBlue Straightener,Beauty,SkyBlue,Open Box,1115.25,1059.49,5,786.09,20,4.2,1200,No,GHS
+1020,PrimeLine Mouse,Electronics,PrimeLine,New,26814.91,24133.42,10,19716.44,38,4.2,744,Yes,GHS
+1021,PeakEdge Power Bank,Electronics,PeakEdge,Refurbished,36369.82,36369.82,0,27384.22,75,4.5,450,Yes,GHS
+1022,BoldCraft Rice Cooker,Kitchen,BoldCraft,Refurbished,3288.78,2959.9,10,2279.61,51,3.5,1989,Yes,GHS
+1023,SkyBlue Coffee Maker,Kitchen,SkyBlue,New,5511.0,4408.8,20,3265.21,155,3.9,1925,No,GHS
+1024,SwiftMart Plant Pot,Home & Garden,SwiftMart,Refurbished,4718.27,4246.44,10,3080.86,186,3.3,852,Yes,GHS
+1025,TrueValue Rug,Home & Garden,TrueValue,New,4661.81,4428.72,5,3693.5,175,4.6,779,No,GHS
+1026,SwiftMart Children's Book,Books,SwiftMart,Open Box,272.89,231.96,15,179.04,96,3.5,1215,Yes,GHS
+1027,NeoCore Boots,Clothing,NeoCore,New,3131.37,3131.37,0,2564.85,21,3.2,864,No,GHS
+1028,NeoCore Wall Art,Home & Garden,NeoCore,Refurbished,5799.54,5509.56,5,4079.69,144,3.6,540,Yes,GHS
+1029,NeoCore Mascara,Beauty,NeoCore,Refurbished,376.85,339.17,10,245.15,169,3.1,249,Yes,GHS
+1030,LuxeGoods Tablet,Electronics,LuxeGoods,Refurbished,17936.26,15245.82,15,12868.79,191,3.7,1878,Yes,GHS
+1031,LuxeGoods Jacket,Clothing,LuxeGoods,New,4156.16,3532.74,15,2770.13,74,4.2,1279,Yes,GHS
+1032,SwiftMart Camera,Electronics,SwiftMart,Open Box,9104.23,7738.6,15,5553.1,125,3.3,1739,Yes,GHS
+1033,LuxeGoods Cutting Board,Kitchen,LuxeGoods,New,8278.36,7450.52,10,5955.93,17,4.2,1970,Yes,GHS
+1034,PrimeLine Vase,Home & Garden,PrimeLine,New,8615.02,7753.52,10,5966.05,103,4.1,1786,Yes,GHS
+1035,PeakEdge Mouse,Electronics,PeakEdge,Open Box,12703.31,11432.98,10,8863.71,36,4.2,1628,Yes,GHS
+1036,NovaTech Sneakers,Clothing,NovaTech,New,3793.35,3224.35,15,2395.07,40,3.6,1088,No,GHS
+1037,PeakEdge Art Book,Books,PeakEdge,New,1063.26,1063.26,0,793.98,62,4.6,308,Yes,GHS
+1038,SwiftMart Science Kit,Toys,SwiftMart,Refurbished,1705.98,1535.38,10,1228.86,148,3.7,589,No,GHS
+1039,SwiftMart Knife Set,Kitchen,SwiftMart,Open Box,3400.38,3230.36,5,2633.48,134,4.5,1508,Yes,GHS
+1040,NovaTech Card Game,Toys,NovaTech,Open Box,714.65,571.72,20,454.93,188,3.8,287,No,GHS
+1041,PrimeLine Building Blocks,Toys,PrimeLine,New,631.12,504.9,20,403.14,57,3.6,340,Yes,GHS
+1042,NeoCore Building Blocks,Toys,NeoCore,Refurbished,3674.76,3674.76,0,3107.71,6,4.3,1598,Yes,GHS
+1043,EcoBrand Gym Bag,Sports,EcoBrand,New,6104.07,5188.46,15,3813.51,162,4.6,985,Yes,GHS
+1044,SkyBlue Dress,Clothing,SkyBlue,Refurbished,340.2,323.19,5,260.03,124,4.1,249,No,GHS
+1045,NeoCore Foundation,Beauty,NeoCore,Refurbished,1203.99,963.19,20,707.71,8,4.9,74,Yes,GHS
+1046,PeakEdge Cookware Set,Kitchen,PeakEdge,Refurbished,5783.55,5494.37,5,4555.29,3,4.1,1111,Yes,GHS
+1047,PeakEdge Power Bank,Electronics,PeakEdge,New,9995.13,8995.62,10,6859.22,135,3.6,799,No,GHS
+1048,PeakEdge Toaster,Kitchen,PeakEdge,New,3232.53,3232.53,0,2324.2,69,4.4,453,Yes,GHS
+1049,BoldCraft Eyeshadow Palette,Beauty,BoldCraft,Refurbished,2380.89,2261.85,5,1595.68,37,3.6,1553,Yes,GHS
+1050,TrueValue Science Kit,Toys,TrueValue,Open Box,1847.02,1477.62,20,1176.91,197,4.8,411,Yes,GHS
+1051,BoldCraft Building Blocks,Toys,BoldCraft,New,731.39,658.25,10,470.58,169,3.5,785,Yes,GHS
+1052,NovaTech Jump Rope,Sports,NovaTech,Open Box,1050.32,997.8,5,736.74,40,3.5,1863,No,GHS
+1053,TrueValue Building Blocks,Toys,TrueValue,New,2342.18,1990.85,15,1496.39,149,5.0,735,Yes,GHS
+1054,PeakEdge Electric Kettle,Kitchen,PeakEdge,New,3308.17,2646.54,20,1972.94,71,3.9,1185,Yes,GHS
+1055,TrueValue Science Kit,Toys,TrueValue,New,617.68,494.14,20,384.22,145,4.2,371,Yes,GHS
+1056,LuxeGoods Doll,Toys,LuxeGoods,New,171.72,171.72,0,123.19,164,4.8,902,No,GHS
+1057,EcoBrand Stuffed Animal,Toys,EcoBrand,New,1357.54,1289.66,5,908.65,33,3.2,580,Yes,GHS
+1058,SwiftMart LEGO Set,Toys,SwiftMart,New,3217.4,2573.92,20,2028.69,3,4.6,232,Yes,GHS
+1059,SkyBlue Serum,Beauty,SkyBlue,New,203.63,162.9,20,132.91,150,3.5,1682,Yes,GHS
+1060,EcoBrand Running Shoes,Sports,EcoBrand,Open Box,6180.02,4944.02,20,3903.64,6,4.2,1542,Yes,GHS
+1061,PrimeLine Self-Help Book,Books,PrimeLine,New,434.77,434.77,0,305.93,152,4.1,1646,Yes,GHS
+1062,NeoCore Nail Polish,Beauty,NeoCore,Open Box,1500.11,1350.1,10,1139.66,43,4.3,812,No,GHS
+1063,NeoCore Biography,Books,NeoCore,Refurbished,655.62,557.28,15,470.66,123,4.7,351,No,GHS
+1064,TrueValue Hair Dryer,Beauty,TrueValue,New,522.95,444.51,15,329.71,95,3.2,1810,Yes,GHS
+1065,LuxeGoods Straightener,Beauty,LuxeGoods,New,1910.47,1528.38,20,1143.19,171,3.6,236,No,GHS
+1066,PrimeLine Power Bank,Electronics,PrimeLine,Open Box,9135.18,8678.42,5,6781.32,34,4.8,1770,Yes,GHS
+1067,NovaTech Jump Rope,Sports,NovaTech,New,11933.98,10740.58,10,7752.1,172,3.8,1551,Yes,GHS
+1068,TrueValue T-Shirt,Clothing,TrueValue,New,2365.65,2129.09,10,1731.38,100,4.7,111,Yes,GHS
+1069,SwiftMart Swimming Goggles,Sports,SwiftMart,Refurbished,7906.85,7511.51,5,5778.58,99,4.6,816,Yes,GHS
+1070,SkyBlue Gym Bag,Sports,SkyBlue,New,2128.31,1702.65,20,1308.81,150,4.4,1757,Yes,GHS
+1071,NovaTech Camera,Electronics,NovaTech,New,36079.89,36079.89,0,27768.31,178,3.3,1210,Yes,GHS
+1072,NeoCore Hoodie,Clothing,NeoCore,Refurbished,3239.56,2753.63,15,1951.77,50,3.7,1937,No,GHS
+1073,NeoCore Tennis Racket,Sports,NeoCore,Open Box,6974.75,6626.01,5,4720.07,60,3.4,706,Yes,GHS
+1074,BoldCraft T-Shirt,Clothing,BoldCraft,New,2038.18,1630.54,20,1306.78,94,4.1,298,Yes,GHS
+1075,PrimeLine Dumbbell Set,Sports,PrimeLine,Refurbished,1411.7,1270.53,10,1038.99,43,4.7,942,Yes,GHS
+1076,SkyBlue Bicycle,Sports,SkyBlue,New,8518.07,7240.36,15,5926.71,86,3.6,1710,Yes,GHS
+1077,NeoCore Basketball,Sports,NeoCore,Refurbished,7041.76,5633.41,20,4681.89,17,3.3,567,Yes,GHS
+1078,TrueValue Camera,Electronics,TrueValue,New,9467.77,9467.77,0,7407.05,32,3.1,1325,Yes,GHS
+1079,PrimeLine Sneakers,Clothing,PrimeLine,Refurbished,3357.59,2853.95,15,2191.95,166,4.1,592,Yes,GHS
+1080,PeakEdge Children's Book,Books,PeakEdge,New,819.18,696.3,15,550.26,163,4.6,1106,Yes,GHS
+1081,BoldCraft Gym Bag,Sports,BoldCraft,New,9894.0,7915.2,20,6226.53,97,3.7,703,No,GHS
+1082,PrimeLine Suit,Clothing,PrimeLine,New,1767.51,1414.01,20,1036.23,43,3.7,1460,Yes,GHS
+1083,NeoCore Mouse,Electronics,NeoCore,Refurbished,36750.73,36750.73,0,29507.97,149,3.3,855,Yes,GHS
+1084,LuxeGoods Gloves,Clothing,LuxeGoods,New,2815.54,2252.43,20,1643.23,135,5.0,574,Yes,GHS
+1085,NovaTech Textbook,Books,NovaTech,New,435.7,392.13,10,286.79,26,4.1,1494,Yes,GHS
+1086,SwiftMart Nail Polish,Beauty,SwiftMart,New,1887.49,1509.99,20,1085.48,90,3.9,15,Yes,GHS
+1087,EcoBrand Tablet,Electronics,EcoBrand,Refurbished,5240.99,4978.94,5,3748.19,158,4.7,1657,Yes,GHS
+1088,LuxeGoods Cutting Board,Kitchen,LuxeGoods,New,640.08,608.08,5,444.37,147,3.1,1836,Yes,GHS
+1089,EcoBrand Power Bank,Electronics,EcoBrand,New,12485.53,12485.53,0,9403.7,191,4.7,1594,Yes,GHS
+1090,EcoBrand Mirror,Home & Garden,EcoBrand,Open Box,5905.89,5610.6,5,4274.51,179,3.5,1090,No,GHS
+1091,PeakEdge Charger,Electronics,PeakEdge,Open Box,32024.56,30423.33,5,24554.36,165,4.2,36,No,GHS
+1092,PrimeLine Moisturizer,Beauty,PrimeLine,New,427.68,427.68,0,303.47,11,3.8,588,No,GHS
+1093,EcoBrand Swimming Goggles,Sports,EcoBrand,Open Box,3022.75,3022.75,0,2304.77,177,4.2,1385,Yes,GHS
+1094,PeakEdge Monitor,Electronics,PeakEdge,Refurbished,24649.62,24649.62,0,18568.04,71,4.1,1050,No,GHS
+1095,SwiftMart Rug,Home & Garden,SwiftMart,New,4796.23,4556.42,5,3302.65,127,3.5,212,Yes,GHS
+1096,LuxeGoods Suit,Clothing,LuxeGoods,New,3779.93,3212.94,15,2705.08,146,3.8,1311,Yes,GHS
+1097,PeakEdge Monitor,Electronics,PeakEdge,Open Box,10893.29,10348.63,5,8328.58,175,4.2,1322,Yes,GHS
+1098,SkyBlue Card Game,Toys,SkyBlue,New,509.28,483.82,5,356.15,125,4.6,587,No,GHS
+1099,SwiftMart Foundation,Beauty,SwiftMart,New,217.29,195.56,10,165.73,61,4.9,1005,No,GHS
+1100,NovaTech Rice Cooker,Kitchen,NovaTech,Refurbished,2150.21,2150.21,0,1597.26,174,4.1,1385,No,GHS
+1101,SkyBlue Power Bank,Electronics,SkyBlue,New,23599.14,23599.14,0,19670.64,181,3.3,10,No,GHS
+1102,SwiftMart Cookware Set,Kitchen,SwiftMart,New,2988.37,2540.11,15,1845.1,27,3.0,1438,Yes,GHS
+1103,NovaTech Mascara,Beauty,NovaTech,Open Box,1374.59,1168.4,15,855.6,68,4.1,1798,Yes,GHS
+1104,TrueValue Vase,Home & Garden,TrueValue,Open Box,17752.22,15977.0,10,13123.4,102,4.5,1233,Yes,GHS
+1105,TrueValue Lamp,Home & Garden,TrueValue,Open Box,478.43,430.59,10,342.74,65,4.4,715,Yes,GHS
+1106,BoldCraft Running Shoes,Sports,BoldCraft,Refurbished,9486.05,7588.84,20,6123.59,80,4.4,930,Yes,GHS
+1107,EcoBrand Sneakers,Clothing,EcoBrand,New,3173.12,3173.12,0,2224.58,35,3.2,945,No,GHS
+1108,EcoBrand Dictionary,Books,EcoBrand,New,1152.41,979.55,15,689.47,39,4.9,125,Yes,GHS
+1109,LuxeGoods Remote Control Car,Toys,LuxeGoods,New,581.94,494.65,15,383.61,178,3.6,1171,Yes,GHS
+1110,NovaTech Biography,Books,NovaTech,Open Box,140.05,126.05,10,90.12,42,3.8,1943,Yes,GHS
+1111,TrueValue Vase,Home & Garden,TrueValue,Refurbished,19713.21,19713.21,0,14171.21,62,3.3,282,Yes,GHS
+1112,SkyBlue Jump Rope,Sports,SkyBlue,New,10858.65,9772.78,10,7776.94,46,3.9,23,Yes,GHS
+1113,TrueValue Stuffed Animal,Toys,TrueValue,Refurbished,3570.31,3391.79,5,2727.68,40,3.1,1220,Yes,GHS
+1114,NovaTech Self-Help Book,Books,NovaTech,Refurbished,483.6,435.24,10,327.04,165,3.7,114,Yes,GHS
+1115,BoldCraft Curtains,Home & Garden,BoldCraft,New,6693.6,6358.92,5,4677.6,134,3.3,58,Yes,GHS
+1116,EcoBrand Knife Set,Kitchen,EcoBrand,New,2797.69,2238.15,20,1813.55,130,5.0,1799,Yes,GHS
+1117,SwiftMart Puzzle,Toys,SwiftMart,New,3301.43,2641.14,20,1932.7,26,4.8,537,Yes,GHS
+1118,PrimeLine Tennis Racket,Sports,PrimeLine,Refurbished,11548.71,10393.84,10,7943.63,131,4.5,1063,Yes,GHS
+1119,BoldCraft Art Book,Books,BoldCraft,New,227.98,193.78,15,144.04,163,4.5,479,Yes,GHS
+1120,NeoCore Building Blocks,Toys,NeoCore,Refurbished,752.09,601.67,20,481.42,14,4.7,279,No,GHS
+1121,PrimeLine Doll,Toys,PrimeLine,New,1598.42,1358.66,15,1086.2,199,4.6,128,No,GHS
+1122,LuxeGoods Science Book,Books,LuxeGoods,Open Box,84.85,72.12,15,55.82,142,4.7,6,Yes,GHS
+1123,PeakEdge Cutting Board,Kitchen,PeakEdge,New,2125.78,1700.62,20,1332.61,25,4.8,1276,Yes,GHS
+1124,PeakEdge Suit,Clothing,PeakEdge,New,3925.29,3729.03,5,2828.95,74,4.4,223,Yes,GHS
+1125,TrueValue Sofa,Home & Garden,TrueValue,New,17005.64,14454.79,15,10243.5,169,4.7,61,No,GHS
+1126,NovaTech Lipstick,Beauty,NovaTech,New,2894.9,2750.15,5,2240.4,42,4.0,687,No,GHS
+1127,NeoCore Textbook,Books,NeoCore,Refurbished,863.36,820.19,5,646.39,109,4.5,1126,Yes,GHS
+1128,SkyBlue Bookshelf,Home & Garden,SkyBlue,Open Box,14984.83,14235.59,5,10142.31,112,4.4,386,Yes,GHS
+1129,LuxeGoods Art Book,Books,LuxeGoods,New,119.08,119.08,0,88.77,154,4.5,1073,Yes,GHS
+1130,TrueValue Charger,Electronics,TrueValue,New,35446.43,31901.79,10,22532.38,123,4.4,472,Yes,GHS
+1131,PeakEdge Headphones,Electronics,PeakEdge,Refurbished,8696.07,8261.27,5,5821.96,46,4.3,1941,Yes,GHS
+1132,PeakEdge Swimming Goggles,Sports,PeakEdge,New,8032.73,7229.46,10,5153.35,145,4.0,759,Yes,GHS
+1133,NovaTech Straightener,Beauty,NovaTech,New,1087.05,1032.7,5,739.33,107,3.0,1358,Yes,GHS
+1134,NeoCore Tablet,Electronics,NeoCore,New,17838.83,17838.83,0,13993.77,12,4.3,680,Yes,GHS
+1135,SwiftMart Air Fryer,Kitchen,SwiftMart,New,8048.13,8048.13,0,5695.13,43,4.7,1686,Yes,GHS
+1136,NeoCore Speaker,Electronics,NeoCore,Open Box,27841.88,22273.5,20,16988.67,24,4.5,870,Yes,GHS
+1137,NeoCore Yoga Mat,Sports,NeoCore,Open Box,11684.54,9931.86,15,7587.32,76,3.7,1713,Yes,GHS
+1138,PrimeLine Cookware Set,Kitchen,PrimeLine,Refurbished,3549.96,3549.96,0,2895.21,39,4.0,1730,Yes,GHS
+1139,TrueValue Camera,Electronics,TrueValue,New,10764.08,9149.47,15,7033.72,132,4.3,224,No,GHS
+1140,EcoBrand Cutting Board,Kitchen,EcoBrand,Open Box,3321.41,3155.34,5,2256.33,4,4.7,294,Yes,GHS
+1141,LuxeGoods Sneakers,Clothing,LuxeGoods,New,2051.09,2051.09,0,1518.49,197,4.8,749,Yes,GHS
+1142,SwiftMart Cookware Set,Kitchen,SwiftMart,New,4606.67,3685.34,20,2947.45,178,4.7,1373,Yes,GHS
+1143,PeakEdge Rug,Home & Garden,PeakEdge,New,15558.32,12446.66,20,8802.63,132,4.5,461,Yes,GHS
+1144,LuxeGoods Bicycle,Sports,LuxeGoods,New,5080.42,4572.38,10,3621.55,119,3.8,1680,No,GHS
+1145,TrueValue Nail Polish,Beauty,TrueValue,New,2810.63,2389.04,15,1958.4,136,3.5,728,Yes,GHS
+1146,PrimeLine Shorts,Clothing,PrimeLine,New,4429.88,4429.88,0,3722.57,71,3.7,1140,Yes,GHS
+1147,SwiftMart Headphones,Electronics,SwiftMart,New,23184.01,19706.41,15,14934.93,190,4.5,1975,No,GHS
+1148,BoldCraft T-Shirt,Clothing,BoldCraft,New,2685.51,2551.23,5,1811.92,56,4.4,1166,No,GHS
+1149,EcoBrand Card Game,Toys,EcoBrand,Open Box,2224.64,2002.18,10,1621.1,65,3.0,1403,No,GHS
+1150,NeoCore Smartphone,Electronics,NeoCore,Open Box,25869.48,24576.01,5,17562.18,197,3.7,1361,Yes,GHS
+1151,PeakEdge Shorts,Clothing,PeakEdge,New,1125.46,1125.46,0,805.91,114,3.6,1748,Yes,GHS
+1152,NovaTech Sofa,Home & Garden,NovaTech,Open Box,1375.74,1169.38,15,939.34,191,3.6,1482,Yes,GHS
+1153,PeakEdge Running Shoes,Sports,PeakEdge,Refurbished,6524.79,5546.07,15,4017.11,68,4.6,1137,Yes,GHS
+1154,NeoCore Charger,Electronics,NeoCore,New,23175.38,23175.38,0,19671.23,50,3.8,1529,No,GHS
+1155,PeakEdge Eyeshadow Palette,Beauty,PeakEdge,Open Box,1435.71,1363.92,5,1010.22,114,3.8,1353,Yes,GHS
+1156,NeoCore Card Game,Toys,NeoCore,New,2556.52,2045.22,20,1518.76,89,4.4,785,No,GHS
+1157,EcoBrand Suit,Clothing,EcoBrand,New,1253.76,1128.38,10,939.47,13,4.7,1187,Yes,GHS
+1158,SwiftMart Hair Dryer,Beauty,SwiftMart,Refurbished,1758.25,1494.51,15,1105.19,125,3.6,1584,Yes,GHS
+1159,BoldCraft Science Kit,Toys,BoldCraft,New,3002.21,2551.88,15,1969.34,154,4.8,1181,No,GHS
+1160,NovaTech Self-Help Book,Books,NovaTech,New,1017.52,1017.52,0,855.69,185,4.7,722,Yes,GHS
+1161,EcoBrand Jump Rope,Sports,EcoBrand,Open Box,3485.76,2788.61,20,2079.17,130,4.0,1755,Yes,GHS
+1162,PrimeLine Monitor,Electronics,PrimeLine,New,8054.62,8054.62,0,6386.18,5,4.0,1031,Yes,GHS
+1163,SkyBlue Dumbbell Set,Sports,SkyBlue,Refurbished,501.75,401.4,20,317.67,43,3.1,1723,Yes,GHS
+1164,PeakEdge Cushion,Home & Garden,PeakEdge,Open Box,10571.7,10571.7,0,7579.46,137,4.7,904,Yes,GHS
+1165,PrimeLine Cookbook,Books,PrimeLine,New,171.06,145.4,15,103.63,89,3.6,759,Yes,GHS
+1166,PrimeLine Headphones,Electronics,PrimeLine,Refurbished,17475.7,14854.34,15,10944.4,86,4.5,1383,No,GHS
+1167,SwiftMart Vase,Home & Garden,SwiftMart,New,11849.54,10664.59,10,8830.66,4,4.1,189,Yes,GHS
+1168,LuxeGoods Smartphone,Electronics,LuxeGoods,New,21513.83,19362.45,10,14255.13,109,4.8,1853,Yes,GHS
+1169,TrueValue Lipstick,Beauty,TrueValue,New,1606.32,1365.37,15,1133.36,176,3.0,647,Yes,GHS
+1170,BoldCraft Sofa,Home & Garden,BoldCraft,Open Box,17265.27,15538.74,10,11771.31,13,4.0,1684,Yes,GHS
+1171,TrueValue Doll,Toys,TrueValue,New,3052.07,2899.47,5,2241.66,88,4.3,1146,Yes,GHS
+1172,LuxeGoods Electric Kettle,Kitchen,LuxeGoods,New,7558.33,6046.66,20,5045.38,20,4.8,1692,Yes,GHS
+1173,EcoBrand Camera,Electronics,EcoBrand,New,14520.79,12342.67,15,9313.0,17,3.1,1756,No,GHS
+1174,EcoBrand Headphones,Electronics,EcoBrand,Open Box,31531.1,29954.54,5,23688.5,13,4.6,878,Yes,GHS
+1175,NovaTech Jacket,Clothing,NovaTech,New,756.92,681.23,10,503.55,47,4.0,989,Yes,GHS
+1176,SkyBlue Food Processor,Kitchen,SkyBlue,Open Box,3125.13,2500.1,20,1867.44,142,4.4,1172,Yes,GHS
+1177,TrueValue Hair Dryer,Beauty,TrueValue,New,2823.28,2258.62,20,1621.76,174,3.4,904,Yes,GHS
+1178,PrimeLine Power Bank,Electronics,PrimeLine,Refurbished,36086.36,28869.09,20,21200.58,184,3.1,1528,Yes,GHS
+1179,PeakEdge Power Bank,Electronics,PeakEdge,Open Box,33337.03,33337.03,0,26852.58,159,3.3,1517,No,GHS
+1180,NeoCore Running Shoes,Sports,NeoCore,Open Box,11674.73,9923.52,15,7810.45,189,3.7,768,Yes,GHS
+1181,LuxeGoods Jacket,Clothing,LuxeGoods,New,1042.99,938.69,10,728.76,70,3.3,195,Yes,GHS
+1182,LuxeGoods Headphones,Electronics,LuxeGoods,New,14400.58,12240.49,15,9866.02,89,4.9,174,Yes,GHS
+1183,LuxeGoods Action Figure,Toys,LuxeGoods,New,465.3,442.03,5,327.66,99,4.2,119,No,GHS
+1184,BoldCraft Board Game,Toys,BoldCraft,New,2453.22,2453.22,0,2031.7,41,3.4,1190,Yes,GHS
+1185,LuxeGoods Cookware Set,Kitchen,LuxeGoods,New,5024.28,5024.28,0,4118.34,160,4.1,568,Yes,GHS
+1186,NovaTech Food Processor,Kitchen,NovaTech,Open Box,2232.57,2232.57,0,1681.79,89,4.3,1422,Yes,GHS
+1187,NeoCore Cushion,Home & Garden,NeoCore,New,3995.72,3995.72,0,3025.02,5,4.5,1656,Yes,GHS
+1188,LuxeGoods Blender,Kitchen,LuxeGoods,New,5356.82,4821.14,10,3697.16,50,4.1,1793,Yes,GHS
+1189,NovaTech Electric Kettle,Kitchen,NovaTech,New,6711.85,6711.85,0,5229.35,187,4.3,444,Yes,GHS
+1190,LuxeGoods Dictionary,Books,LuxeGoods,Open Box,905.33,814.8,10,631.29,130,3.4,1873,Yes,GHS
+1191,PrimeLine Perfume,Beauty,PrimeLine,New,2783.28,2504.95,10,1982.01,92,3.4,1148,No,GHS
+1192,SkyBlue Serum,Beauty,SkyBlue,Open Box,2412.02,2170.82,10,1725.19,6,3.2,413,Yes,GHS
+1193,NovaTech Serum,Beauty,NovaTech,New,472.75,401.84,15,303.33,26,3.7,1181,Yes,GHS
+1194,EcoBrand Dress,Clothing,EcoBrand,New,2181.62,2072.54,5,1610.62,41,4.2,438,No,GHS
+1195,SwiftMart Jump Rope,Sports,SwiftMart,New,9287.66,7430.13,20,5747.89,150,3.4,341,No,GHS
+1196,PeakEdge Charger,Electronics,PeakEdge,New,17560.84,16682.8,5,13515.78,39,3.6,828,Yes,GHS
+1197,SkyBlue Doll,Toys,SkyBlue,New,2789.16,2510.24,10,1774.95,123,3.5,1586,No,GHS
+1198,LuxeGoods Stuffed Animal,Toys,LuxeGoods,New,432.32,389.09,10,296.6,175,3.5,1784,Yes,GHS
+1199,NeoCore Straightener,Beauty,NeoCore,New,1585.38,1426.84,10,1037.88,40,4.2,174,Yes,GHS
+1200,EcoBrand Cushion,Home & Garden,EcoBrand,Refurbished,10329.55,10329.55,0,8643.55,128,3.5,1333,No,GHS
+1201,LuxeGoods Perfume,Beauty,LuxeGoods,Refurbished,1862.21,1582.88,15,1340.18,173,4.2,1354,No,GHS
+1202,TrueValue Dress,Clothing,TrueValue,New,3914.65,3327.45,15,2698.5,82,4.7,1317,Yes,GHS
+1203,EcoBrand Dining Table,Home & Garden,EcoBrand,New,418.84,376.96,10,317.15,102,4.6,410,Yes,GHS
+1204,NeoCore Jeans,Clothing,NeoCore,New,349.6,349.6,0,293.87,113,4.8,1048,No,GHS
+1205,PeakEdge Suit,Clothing,PeakEdge,New,1614.51,1614.51,0,1190.6,55,4.1,1913,Yes,GHS
+1206,NeoCore Lamp,Home & Garden,NeoCore,Open Box,21909.15,18622.78,15,13956.16,138,5.0,257,No,GHS
+1207,SwiftMart Doll,Toys,SwiftMart,New,1012.92,860.98,15,728.24,176,4.1,1401,Yes,GHS
+1208,BoldCraft Cushion,Home & Garden,BoldCraft,New,5435.01,4619.76,15,3502.27,166,4.8,54,Yes,GHS
+1209,PrimeLine Blender,Kitchen,PrimeLine,New,8490.19,8065.68,5,5810.58,138,4.8,469,Yes,GHS
+1210,SkyBlue Serum,Beauty,SkyBlue,New,2297.64,1952.99,15,1639.45,30,3.9,1812,Yes,GHS
+1211,NeoCore Hat,Clothing,NeoCore,New,2125.4,1700.32,20,1434.76,167,3.2,420,Yes,GHS
+1212,NovaTech Cushion,Home & Garden,NovaTech,Refurbished,2588.02,2199.82,15,1678.3,190,3.5,2000,No,GHS
+1213,SkyBlue T-Shirt,Clothing,SkyBlue,New,2146.18,1824.25,15,1443.78,25,3.4,1217,No,GHS
+1214,PrimeLine Food Processor,Kitchen,PrimeLine,Open Box,855.85,770.26,10,553.04,91,4.1,495,Yes,GHS
+1215,BoldCraft Headphones,Electronics,BoldCraft,New,33501.56,30151.4,10,21515.42,142,3.3,688,Yes,GHS
+1216,NovaTech Novel,Books,NovaTech,New,87.94,87.94,0,63.39,28,4.5,1001,Yes,GHS
+1217,PeakEdge Hoodie,Clothing,PeakEdge,New,3132.62,2819.36,10,2242.46,98,3.6,1524,Yes,GHS
+1218,NovaTech Cookbook,Books,NovaTech,New,821.18,656.94,20,545.33,98,4.8,1454,Yes,GHS
+1219,EcoBrand LEGO Set,Toys,EcoBrand,New,1876.5,1782.67,5,1297.34,93,4.6,1301,Yes,GHS
+1220,TrueValue Children's Book,Books,TrueValue,New,215.6,194.04,10,157.03,133,3.1,822,Yes,GHS
+1221,NovaTech T-Shirt,Clothing,NovaTech,Open Box,2631.36,2499.79,5,1843.01,170,4.6,201,Yes,GHS
+1222,PrimeLine Stuffed Animal,Toys,PrimeLine,New,232.94,221.29,5,175.68,84,3.6,402,Yes,GHS
+1223,TrueValue Dumbbell Set,Sports,TrueValue,New,5161.59,4387.35,15,3122.76,76,3.6,1232,Yes,GHS
+1224,EcoBrand Vase,Home & Garden,EcoBrand,Open Box,6396.38,5756.74,10,4577.98,185,4.4,1264,No,GHS
+1225,BoldCraft Plant Pot,Home & Garden,BoldCraft,New,3305.73,3305.73,0,2774.73,77,3.8,339,Yes,GHS
+1226,EcoBrand Rice Cooker,Kitchen,EcoBrand,Open Box,8891.19,8002.07,10,6506.62,169,4.0,1830,Yes,GHS
+1227,PeakEdge Electric Kettle,Kitchen,PeakEdge,New,4325.54,4109.26,5,2976.69,29,3.7,827,Yes,GHS
+1228,NeoCore Bed Frame,Home & Garden,NeoCore,New,10311.79,10311.79,0,7623.04,5,4.0,1071,Yes,GHS
+1229,SwiftMart Doll,Toys,SwiftMart,Open Box,2293.11,2293.11,0,1651.38,106,4.3,1084,Yes,GHS
+1230,SwiftMart Mascara,Beauty,SwiftMart,Open Box,809.12,809.12,0,582.79,8,4.4,348,No,GHS
+1231,BoldCraft Card Game,Toys,BoldCraft,New,1082.01,973.81,10,823.65,4,4.8,1652,Yes,GHS
+1232,LuxeGoods Electric Kettle,Kitchen,LuxeGoods,New,4268.76,4268.76,0,3116.05,104,3.3,280,Yes,GHS
+1233,LuxeGoods Art Book,Books,LuxeGoods,Open Box,567.93,511.14,10,382.15,46,3.8,1135,Yes,GHS
+1234,SwiftMart Blender,Kitchen,SwiftMart,Open Box,1162.28,1162.28,0,835.51,38,4.5,842,Yes,GHS
+1235,NeoCore Gym Bag,Sports,NeoCore,New,8255.41,7842.64,5,6255.2,118,5.0,243,Yes,GHS
+1236,EcoBrand Shorts,Clothing,EcoBrand,Refurbished,1972.95,1578.36,20,1308.93,80,3.2,701,Yes,GHS
+1237,BoldCraft Bookshelf,Home & Garden,BoldCraft,New,10884.38,9795.94,10,7288.69,21,4.1,696,Yes,GHS
+1238,SkyBlue Mirror,Home & Garden,SkyBlue,New,1142.77,1028.49,10,766.55,81,4.3,532,Yes,GHS
+1239,BoldCraft Foundation,Beauty,BoldCraft,Refurbished,184.99,147.99,20,110.38,43,3.7,1245,Yes,GHS
+1240,BoldCraft Power Bank,Electronics,BoldCraft,New,30371.04,27333.94,10,22832.37,25,3.2,1832,No,GHS
+1241,TrueValue Electric Kettle,Kitchen,TrueValue,Refurbished,961.22,961.22,0,679.48,174,4.6,1967,Yes,GHS
+1242,SkyBlue Monitor,Electronics,SkyBlue,New,12699.14,10794.27,15,7783.76,24,4.1,1693,Yes,GHS
+1243,BoldCraft Novel,Books,BoldCraft,Refurbished,84.8,76.32,10,58.26,2,3.1,1554,Yes,GHS
+1244,PrimeLine Art Book,Books,PrimeLine,New,745.83,745.83,0,531.18,105,4.2,50,Yes,GHS
+1245,NeoCore Plant Pot,Home & Garden,NeoCore,Refurbished,20785.48,17667.66,15,13012.08,163,3.1,227,Yes,GHS
+1246,NeoCore Vase,Home & Garden,NeoCore,New,16591.97,16591.97,0,11732.93,27,5.0,1753,Yes,GHS
+1247,NovaTech Scarf,Clothing,NovaTech,New,2292.91,1948.97,15,1480.19,56,4.5,1893,Yes,GHS
+1248,NovaTech Running Shoes,Sports,NovaTech,Refurbished,10355.96,10355.96,0,7553.33,3,3.5,1272,Yes,GHS
+1249,TrueValue Swimming Goggles,Sports,TrueValue,Open Box,6153.9,5846.2,5,4942.01,118,4.1,215,Yes,GHS
+1250,PrimeLine Travel Guide,Books,PrimeLine,New,158.74,158.74,0,121.11,10,3.7,1119,No,GHS
+1251,PrimeLine Children's Book,Books,PrimeLine,New,383.5,364.32,5,287.88,34,3.2,1890,Yes,GHS
+1252,SwiftMart Perfume,Beauty,SwiftMart,New,1415.38,1203.07,15,977.97,137,4.6,1232,Yes,GHS
+1253,SkyBlue Hair Dryer,Beauty,SkyBlue,New,1956.42,1956.42,0,1425.06,13,4.3,1382,Yes,GHS
+1254,NeoCore Tennis Racket,Sports,NeoCore,New,1353.24,1353.24,0,983.96,156,4.9,173,Yes,GHS
+1255,NeoCore Nail Polish,Beauty,NeoCore,New,1831.23,1648.11,10,1323.69,155,3.1,1197,Yes,GHS
+1256,EcoBrand Cutting Board,Kitchen,EcoBrand,Open Box,7488.1,6739.29,10,5716.48,112,3.9,1959,Yes,GHS
+1257,EcoBrand Jump Rope,Sports,EcoBrand,Open Box,4086.09,3881.79,5,3095.18,134,3.7,292,No,GHS
+1258,BoldCraft Rug,Home & Garden,BoldCraft,New,10618.5,8494.8,20,7140.22,137,4.3,479,Yes,GHS
+1259,SwiftMart Toaster,Kitchen,SwiftMart,New,4969.88,4721.39,5,3607.07,87,3.1,1284,Yes,GHS
+1260,SwiftMart Cookware Set,Kitchen,SwiftMart,Refurbished,2877.9,2590.11,10,2021.63,6,3.4,71,Yes,GHS
+1261,NovaTech Running Shoes,Sports,NovaTech,New,8066.24,6856.3,15,4891.3,7,4.6,1803,Yes,GHS
+1262,BoldCraft Science Kit,Toys,BoldCraft,New,2884.64,2596.18,10,2072.21,169,4.8,605,No,GHS
+1263,NovaTech Remote Control Car,Toys,NovaTech,New,504.89,454.4,10,372.18,97,3.3,1992,Yes,GHS
+1264,SwiftMart Plant Pot,Home & Garden,SwiftMart,Refurbished,1334.22,1267.51,5,946.62,53,3.3,607,Yes,GHS
+1265,SwiftMart Travel Guide,Books,SwiftMart,Open Box,170.91,136.73,20,105.28,122,4.1,1376,No,GHS
+1266,EcoBrand Bookshelf,Home & Garden,EcoBrand,Open Box,10234.89,9723.15,5,6879.3,163,3.3,1374,Yes,GHS
+1267,NeoCore Jacket,Clothing,NeoCore,Open Box,2699.92,2699.92,0,2199.72,130,4.3,1357,Yes,GHS
+1268,SkyBlue Lamp,Home & Garden,SkyBlue,Refurbished,6363.84,6045.65,5,5027.21,105,3.3,873,No,GHS
+1269,NovaTech Coffee Maker,Kitchen,NovaTech,New,4037.89,3836.0,5,2843.57,51,3.2,1112,Yes,GHS
+1270,SwiftMart Scarf,Clothing,SwiftMart,Refurbished,2437.03,2193.33,10,1580.07,178,5.0,1237,Yes,GHS
+1271,NeoCore Rice Cooker,Kitchen,NeoCore,New,950.63,903.1,5,651.77,96,4.5,1287,No,GHS
+1272,LuxeGoods Textbook,Books,LuxeGoods,Open Box,429.45,343.56,20,267.16,54,4.5,343,Yes,GHS
+1273,SwiftMart Self-Help Book,Books,SwiftMart,New,565.54,480.71,15,388.55,166,4.9,1611,No,GHS
+1274,BoldCraft Jump Rope,Sports,BoldCraft,Refurbished,7920.73,7524.69,5,6152.21,87,3.5,1217,Yes,GHS
+1275,TrueValue Tennis Racket,Sports,TrueValue,Refurbished,6100.45,6100.45,0,5166.01,48,3.5,1503,Yes,GHS
+1276,SwiftMart Dining Table,Home & Garden,SwiftMart,New,12445.04,10578.28,15,8819.24,152,3.5,138,Yes,GHS
+1277,PeakEdge Gloves,Clothing,PeakEdge,New,1150.82,1150.82,0,848.26,58,4.1,1372,Yes,GHS
+1278,SkyBlue Air Fryer,Kitchen,SkyBlue,New,3816.79,3625.95,5,2663.93,185,3.5,580,No,GHS
+1279,SkyBlue Headphones,Electronics,SkyBlue,Open Box,16205.53,12964.42,20,9833.07,2,3.6,1529,Yes,GHS
+1280,SkyBlue Wall Art,Home & Garden,SkyBlue,New,1796.65,1527.15,15,1159.57,109,3.6,19,Yes,GHS
+1281,BoldCraft Jacket,Clothing,BoldCraft,New,1490.55,1416.02,5,1090.95,11,3.8,5,No,GHS
+1282,PrimeLine Blender,Kitchen,PrimeLine,New,926.81,787.79,15,662.37,28,3.8,117,Yes,GHS
+1283,LuxeGoods Cookware Set,Kitchen,LuxeGoods,New,8542.53,7261.15,15,5563.67,70,3.5,622,No,GHS
+1284,BoldCraft Card Game,Toys,BoldCraft,New,493.88,419.8,15,312.29,196,4.7,1372,Yes,GHS
+1285,PrimeLine Jacket,Clothing,PrimeLine,New,1566.71,1410.04,10,1004.63,156,4.1,1390,Yes,GHS
+1286,PeakEdge Suit,Clothing,PeakEdge,Open Box,456.37,387.91,15,295.35,75,4.4,428,No,GHS
+1287,SkyBlue Travel Guide,Books,SkyBlue,New,857.15,814.29,5,600.18,5,4.7,284,No,GHS
+1288,SkyBlue Speaker,Electronics,SkyBlue,New,25109.03,20087.22,20,16221.83,179,4.8,257,Yes,GHS
+1289,TrueValue Blender,Kitchen,TrueValue,New,4963.2,4715.04,5,3768.82,97,4.0,1386,Yes,GHS
+1290,EcoBrand Cutting Board,Kitchen,EcoBrand,New,2001.37,1701.16,15,1422.32,43,5.0,1993,Yes,GHS
+1291,PrimeLine Knife Set,Kitchen,PrimeLine,New,6783.65,5766.1,15,4191.44,158,4.7,1623,Yes,GHS
+1292,NeoCore Bicycle,Sports,NeoCore,New,1066.6,906.61,15,672.14,24,4.3,811,Yes,GHS
+1293,LuxeGoods Tablet,Electronics,LuxeGoods,Refurbished,5158.95,4385.11,15,3299.28,25,5.0,1328,Yes,GHS
+1294,PeakEdge Mirror,Home & Garden,PeakEdge,New,13919.26,13919.26,0,11636.92,93,3.3,1618,Yes,GHS
+1295,TrueValue Food Processor,Kitchen,TrueValue,New,4094.08,4094.08,0,3462.71,114,3.7,563,Yes,GHS
+1296,SwiftMart LEGO Set,Toys,SwiftMart,Open Box,341.25,324.19,5,248.63,3,3.4,474,No,GHS
+1297,LuxeGoods Nail Polish,Beauty,LuxeGoods,New,2611.51,2089.21,20,1628.94,177,4.8,1146,Yes,GHS
+1298,PeakEdge Swimming Goggles,Sports,PeakEdge,New,8765.5,7012.4,20,5768.51,159,3.3,1393,Yes,GHS
+1299,EcoBrand Remote Control Car,Toys,EcoBrand,New,3268.9,3105.45,5,2549.58,132,3.8,297,Yes,GHS
+1300,NovaTech Food Processor,Kitchen,NovaTech,Refurbished,2588.58,2200.29,15,1702.56,69,3.2,469,Yes,GHS
+1301,PrimeLine Bicycle,Sports,PrimeLine,Open Box,6249.33,5311.93,15,3736.11,120,4.2,1387,No,GHS
+1302,TrueValue Building Blocks,Toys,TrueValue,Refurbished,1936.33,1936.33,0,1425.06,57,4.3,114,Yes,GHS
+1303,SwiftMart Novel,Books,SwiftMart,New,255.29,204.23,20,144.34,57,4.7,163,Yes,GHS
+1304,TrueValue Children's Book,Books,TrueValue,Refurbished,993.14,893.83,10,756.84,138,3.4,1515,No,GHS
+1305,PeakEdge Gym Bag,Sports,PeakEdge,Open Box,9387.8,8449.02,10,6196.91,136,3.9,557,No,GHS
+1306,PrimeLine Science Kit,Toys,PrimeLine,Refurbished,2095.05,1780.79,15,1319.89,161,3.4,43,Yes,GHS
+1307,SkyBlue Sofa,Home & Garden,SkyBlue,Open Box,13047.5,13047.5,0,10567.34,93,4.8,388,No,GHS
+1308,TrueValue Gloves,Clothing,TrueValue,Refurbished,4179.77,4179.77,0,3352.79,59,4.3,1278,No,GHS
+1309,NovaTech Food Processor,Kitchen,NovaTech,Open Box,5730.51,5730.51,0,4473.81,187,3.4,1623,No,GHS
+1310,PeakEdge Charger,Electronics,PeakEdge,Refurbished,16625.83,13300.66,20,9985.57,65,3.9,1100,Yes,GHS
+1311,EcoBrand Boots,Clothing,EcoBrand,New,4489.89,4040.9,10,2957.41,150,3.6,439,Yes,GHS
+1312,EcoBrand Dumbbell Set,Sports,EcoBrand,New,4027.93,3423.74,15,2664.45,97,4.2,269,Yes,GHS
+1313,LuxeGoods Smartwatch,Electronics,LuxeGoods,New,17166.22,13732.98,20,11001.43,119,4.5,1662,Yes,GHS
+1314,TrueValue Headphones,Electronics,TrueValue,New,34468.26,34468.26,0,26110.49,82,4.9,167,No,GHS
+1315,LuxeGoods Stuffed Animal,Toys,LuxeGoods,New,312.59,312.59,0,241.81,15,3.9,73,Yes,GHS
+1316,EcoBrand Charger,Electronics,EcoBrand,Open Box,3636.1,3636.1,0,2606.6,158,3.6,420,Yes,GHS
+1317,PrimeLine Monitor,Electronics,PrimeLine,New,7028.33,7028.33,0,5502.16,127,3.1,1703,Yes,GHS
+1318,TrueValue LEGO Set,Toys,TrueValue,New,2555.96,2044.77,20,1483.95,113,4.6,968,Yes,GHS
+1319,BoldCraft Gym Bag,Sports,BoldCraft,New,11778.51,9422.81,20,6728.91,62,3.2,283,Yes,GHS
+1320,LuxeGoods Electric Kettle,Kitchen,LuxeGoods,Refurbished,8201.13,8201.13,0,6933.38,94,3.8,487,No,GHS
+1321,PrimeLine Headphones,Electronics,PrimeLine,Refurbished,25913.15,22026.18,15,16112.94,133,3.4,1117,Yes,GHS
+1322,NovaTech Monitor,Electronics,NovaTech,Open Box,31761.31,25409.05,20,20648.89,17,3.7,79,Yes,GHS
+1323,PrimeLine Running Shoes,Sports,PrimeLine,Open Box,3320.5,2988.45,10,2173.93,191,3.7,1764,Yes,GHS
+1324,SkyBlue Doll,Toys,SkyBlue,Open Box,2413.46,2292.79,5,1830.94,106,4.7,781,Yes,GHS
+1325,TrueValue Speaker,Electronics,TrueValue,New,7459.29,6713.36,10,5239.3,43,4.2,1627,No,GHS
+1326,TrueValue Curtains,Home & Garden,TrueValue,Open Box,9762.34,8786.11,10,6819.0,166,3.3,1805,Yes,GHS
+1327,EcoBrand Plant Pot,Home & Garden,EcoBrand,Refurbished,8467.99,6774.39,20,5216.73,100,4.1,178,Yes,GHS
+1328,SwiftMart Textbook,Books,SwiftMart,New,212.18,169.74,20,140.27,190,4.4,1973,Yes,GHS
+1329,LuxeGoods Monitor,Electronics,LuxeGoods,New,37230.94,37230.94,0,28550.4,130,3.6,848,Yes,GHS
+1330,TrueValue Headphones,Electronics,TrueValue,New,8855.0,8412.25,5,7126.95,194,4.6,1995,Yes,GHS
+1331,PrimeLine Football,Sports,PrimeLine,Open Box,7713.08,7327.43,5,5248.35,200,3.6,310,Yes,GHS
+1332,TrueValue Travel Guide,Books,TrueValue,Open Box,199.01,199.01,0,141.71,98,3.4,42,Yes,GHS
+1333,NeoCore Puzzle,Toys,NeoCore,New,1399.57,1399.57,0,1175.33,105,3.2,574,Yes,GHS
+1334,PeakEdge Cookware Set,Kitchen,PeakEdge,New,7822.0,6648.7,15,4774.56,142,4.2,1399,Yes,GHS
+1335,PeakEdge Textbook,Books,PeakEdge,New,798.66,758.73,5,595.11,111,3.8,1723,Yes,GHS
+1336,NovaTech Cookbook,Books,NovaTech,New,546.64,464.64,15,354.01,45,3.1,929,Yes,GHS
+1337,EcoBrand Headphones,Electronics,EcoBrand,Open Box,11026.26,9372.32,15,7862.52,64,4.5,1597,Yes,GHS
+1338,LuxeGoods Mascara,Beauty,LuxeGoods,Refurbished,2561.14,2433.08,5,1973.96,29,4.8,56,No,GHS
+1339,PrimeLine Building Blocks,Toys,PrimeLine,New,332.33,332.33,0,265.89,18,4.2,1760,No,GHS
+1340,NeoCore Rice Cooker,Kitchen,NeoCore,New,5909.1,5909.1,0,4405.18,82,3.3,1150,No,GHS
+1341,NeoCore Serum,Beauty,NeoCore,Open Box,1442.13,1442.13,0,1019.96,48,4.8,901,Yes,GHS
+1342,TrueValue Food Processor,Kitchen,TrueValue,New,6943.72,5554.98,20,4322.81,154,3.7,1563,Yes,GHS
+1343,NeoCore Monitor,Electronics,NeoCore,Refurbished,5834.94,4667.95,20,3506.44,83,3.8,295,Yes,GHS
+1344,SwiftMart Charger,Electronics,SwiftMart,New,16409.59,13127.67,20,11054.04,194,4.7,91,No,GHS
+1345,PeakEdge Rice Cooker,Kitchen,PeakEdge,Refurbished,6004.12,5103.5,15,3662.21,128,3.0,755,No,GHS
+1346,PeakEdge Vase,Home & Garden,PeakEdge,Open Box,4951.73,4951.73,0,4033.32,59,4.6,1457,No,GHS
+1347,SkyBlue Textbook,Books,SkyBlue,New,101.89,86.61,15,69.35,78,4.7,836,Yes,GHS
+1348,SkyBlue Self-Help Book,Books,SkyBlue,Open Box,144.55,115.64,20,84.7,156,4.1,285,No,GHS
+1349,PrimeLine Travel Guide,Books,PrimeLine,New,434.61,369.42,15,289.33,45,4.1,758,No,GHS
+1350,BoldCraft Building Blocks,Toys,BoldCraft,Refurbished,361.18,307.0,15,227.87,167,3.7,1074,Yes,GHS
+1351,NeoCore LEGO Set,Toys,NeoCore,Refurbished,2062.5,1959.38,5,1600.06,145,3.9,1403,Yes,GHS
+1352,PrimeLine Curtains,Home & Garden,PrimeLine,New,1808.05,1627.24,10,1205.31,34,4.8,346,No,GHS
+1353,PeakEdge Bicycle,Sports,PeakEdge,Refurbished,9896.88,8907.19,10,7036.08,136,4.4,945,Yes,GHS
+1354,BoldCraft Bicycle,Sports,BoldCraft,New,8836.62,8394.79,5,6421.88,192,4.3,1881,Yes,GHS
+1355,EcoBrand Wall Art,Home & Garden,EcoBrand,New,4359.01,3705.16,15,3104.44,133,3.2,1928,Yes,GHS
+1356,EcoBrand Laptop,Electronics,EcoBrand,New,21022.43,16817.94,20,13160.82,20,4.6,857,Yes,GHS
+1357,PrimeLine Cookbook,Books,PrimeLine,New,1120.29,1120.29,0,939.46,88,3.3,1885,No,GHS
+1358,NovaTech Serum,Beauty,NovaTech,New,1436.11,1364.3,5,1125.55,109,4.9,1041,No,GHS
+1359,LuxeGoods Gym Bag,Sports,LuxeGoods,New,7402.98,6292.53,15,5091.05,31,4.7,66,Yes,GHS
+1360,NovaTech Charger,Electronics,NovaTech,New,7448.83,6703.95,10,5029.55,31,4.2,331,Yes,GHS
+1361,SkyBlue Curtains,Home & Garden,SkyBlue,Refurbished,16000.95,13600.81,15,10293.86,55,4.0,665,Yes,GHS
+1362,LuxeGoods Mascara,Beauty,LuxeGoods,New,2791.73,2233.38,20,1851.58,61,4.2,1390,Yes,GHS
+1363,LuxeGoods Camera,Electronics,LuxeGoods,Refurbished,21572.06,21572.06,0,15623.07,177,3.9,1822,No,GHS
+1364,NeoCore Biography,Books,NeoCore,Refurbished,620.61,527.52,15,421.81,25,3.2,255,Yes,GHS
+1365,PrimeLine Dictionary,Books,PrimeLine,New,554.05,498.64,10,377.94,85,3.3,879,Yes,GHS
+1366,PrimeLine Blender,Kitchen,PrimeLine,New,6703.98,6703.98,0,5636.35,15,4.4,1996,Yes,GHS
+1367,LuxeGoods Mouse,Electronics,LuxeGoods,Open Box,15428.21,13113.98,15,9536.48,69,3.2,1209,Yes,GHS
+1368,PeakEdge Charger,Electronics,PeakEdge,New,3643.97,2915.18,20,2306.12,122,4.9,1224,No,GHS
+1369,SkyBlue Suit,Clothing,SkyBlue,New,2539.84,2412.85,5,2040.33,136,3.3,1871,No,GHS
+1370,EcoBrand Toaster,Kitchen,EcoBrand,New,5297.95,4768.15,10,3839.32,123,4.7,1650,Yes,GHS
+1371,BoldCraft Building Blocks,Toys,BoldCraft,New,1157.78,1157.78,0,861.26,168,3.5,1842,Yes,GHS
+1372,TrueValue Cookware Set,Kitchen,TrueValue,Refurbished,7734.91,7734.91,0,5633.37,67,4.0,1999,Yes,GHS
+1373,NovaTech Travel Guide,Books,NovaTech,New,134.71,107.77,20,85.95,183,3.9,1229,Yes,GHS
+1374,BoldCraft T-Shirt,Clothing,BoldCraft,Open Box,3068.74,2915.3,5,2097.79,165,3.9,1500,Yes,GHS
+1375,BoldCraft Yoga Mat,Sports,BoldCraft,New,8427.78,6742.22,20,5501.51,35,3.5,1205,Yes,GHS
+1376,NeoCore Running Shoes,Sports,NeoCore,New,11221.11,10660.05,5,8396.48,45,3.3,1364,Yes,GHS
+1377,NeoCore Hoodie,Clothing,NeoCore,Refurbished,1091.73,927.97,15,787.84,54,3.5,805,Yes,GHS
+1378,EcoBrand Rice Cooker,Kitchen,EcoBrand,New,6640.67,5976.6,10,4508.41,20,3.6,1300,Yes,GHS
+1379,LuxeGoods Dictionary,Books,LuxeGoods,Refurbished,405.64,344.79,15,278.08,177,4.2,461,Yes,GHS
+1380,BoldCraft Basketball,Sports,BoldCraft,Open Box,10546.85,9492.17,10,7053.47,200,4.4,943,Yes,GHS
+1381,SwiftMart Straightener,Beauty,SwiftMart,Open Box,2186.25,1967.62,10,1632.28,183,4.7,1203,No,GHS
+1382,NovaTech Action Figure,Toys,NovaTech,New,2202.47,1982.22,10,1549.84,135,3.7,414,No,GHS
+1383,SkyBlue Dining Table,Home & Garden,SkyBlue,Refurbished,16312.31,13865.46,15,10403.19,90,3.8,1006,No,GHS
+1384,SkyBlue Novel,Books,SkyBlue,New,319.8,255.84,20,206.19,175,4.6,1478,Yes,GHS
+1385,PeakEdge Shorts,Clothing,PeakEdge,Refurbished,4060.56,3248.45,20,2409.42,111,3.2,1131,Yes,GHS
+1386,EcoBrand Electric Kettle,Kitchen,EcoBrand,New,1179.23,1179.23,0,900.98,56,3.5,633,Yes,GHS
+1387,BoldCraft Gloves,Clothing,BoldCraft,Open Box,889.22,800.3,10,636.43,154,4.8,1050,Yes,GHS
+1388,SwiftMart Toaster,Kitchen,SwiftMart,New,6688.95,5685.61,15,4536.7,158,3.2,864,Yes,GHS
+1389,SwiftMart Food Processor,Kitchen,SwiftMart,Open Box,6428.33,5785.5,10,4743.96,89,4.0,115,Yes,GHS
+1390,LuxeGoods Eyeshadow Palette,Beauty,LuxeGoods,New,2864.67,2721.44,5,2148.69,67,4.7,45,Yes,GHS
+1391,SwiftMart Electric Kettle,Kitchen,SwiftMart,Refurbished,5988.98,4791.18,20,3705.33,112,4.4,1283,Yes,GHS
+1392,TrueValue Mascara,Beauty,TrueValue,Open Box,1621.53,1540.45,5,1164.16,135,3.8,1066,Yes,GHS
+1393,PeakEdge Monitor,Electronics,PeakEdge,New,20270.98,17230.33,15,12764.5,21,4.7,133,Yes,GHS
+1394,PrimeLine Eyeshadow Palette,Beauty,PrimeLine,Refurbished,1808.24,1627.42,10,1349.82,121,3.8,98,No,GHS
+1395,PeakEdge Cookware Set,Kitchen,PeakEdge,Open Box,2912.56,2475.68,15,1990.4,162,4.8,53,Yes,GHS
+1396,PeakEdge Boots,Clothing,PeakEdge,Open Box,4117.87,3294.3,20,2647.11,72,4.0,539,Yes,GHS
+1397,SwiftMart Children's Book,Books,SwiftMart,New,586.22,498.29,15,392.8,110,4.4,1862,Yes,GHS
+1398,PrimeLine Speaker,Electronics,PrimeLine,New,22860.93,18288.74,20,15343.99,180,4.4,1495,Yes,GHS
+1399,PeakEdge Puzzle,Toys,PeakEdge,Open Box,3219.56,2736.63,15,1935.07,39,3.4,1246,No,GHS
+1400,NovaTech Novel,Books,NovaTech,New,439.01,417.06,5,347.06,111,3.3,295,Yes,GHS
+1401,LuxeGoods Hoodie,Clothing,LuxeGoods,New,1700.59,1615.56,5,1209.2,77,3.9,1285,Yes,GHS
+1402,PeakEdge Curtains,Home & Garden,PeakEdge,Refurbished,7167.43,6450.69,10,5040.94,187,4.4,257,Yes,GHS
+1403,SkyBlue Dictionary,Books,SkyBlue,Open Box,1107.12,885.7,20,725.23,109,4.9,346,Yes,GHS
+1404,BoldCraft Smartphone,Electronics,BoldCraft,New,24833.15,23591.49,5,18960.98,130,3.6,1876,No,GHS
+1405,NovaTech Remote Control Car,Toys,NovaTech,Refurbished,3034.88,2579.65,15,2044.3,118,4.1,769,Yes,GHS
+1406,PrimeLine Plant Pot,Home & Garden,PrimeLine,Open Box,4849.21,4121.83,15,2966.89,14,3.0,57,Yes,GHS
+1407,LuxeGoods Electric Kettle,Kitchen,LuxeGoods,New,4240.6,3604.51,15,2908.39,119,3.3,1860,Yes,GHS
+1408,TrueValue Dress,Clothing,TrueValue,New,3409.0,2897.65,15,2339.53,124,5.0,1550,Yes,GHS
+1409,NovaTech Bicycle,Sports,NovaTech,Refurbished,5439.43,4895.49,10,3699.34,131,3.7,1342,Yes,GHS
+1410,LuxeGoods Eyeshadow Palette,Beauty,LuxeGoods,Open Box,218.85,175.08,20,143.54,58,4.6,686,Yes,GHS
+1411,BoldCraft Jacket,Clothing,BoldCraft,New,2527.8,2022.24,20,1470.06,50,3.8,746,Yes,GHS
+1412,SwiftMart Foundation,Beauty,SwiftMart,Refurbished,1373.42,1236.08,10,982.41,55,4.9,996,Yes,GHS
+1413,NovaTech Action Figure,Toys,NovaTech,New,397.39,357.65,10,288.26,74,4.9,641,Yes,GHS
+1414,PrimeLine Cutting Board,Kitchen,PrimeLine,New,3524.86,2996.13,15,2312.9,172,3.8,132,No,GHS
+1415,PrimeLine Mascara,Beauty,PrimeLine,New,1799.11,1439.29,20,1049.53,2,4.5,1458,No,GHS
+1416,EcoBrand Keyboard,Electronics,EcoBrand,New,36267.13,29013.7,20,24084.33,140,4.7,1149,No,GHS
+1417,BoldCraft Food Processor,Kitchen,BoldCraft,Open Box,4536.64,4536.64,0,3704.14,82,4.4,890,Yes,GHS
+1418,PrimeLine Nail Polish,Beauty,PrimeLine,New,2824.43,2259.54,20,1788.66,81,3.5,1661,No,GHS
+1419,SkyBlue T-Shirt,Clothing,SkyBlue,New,1049.17,996.71,5,840.25,133,3.4,606,No,GHS
+1420,SwiftMart Mascara,Beauty,SwiftMart,Refurbished,1373.76,1236.38,10,975.81,86,3.4,460,Yes,GHS
+1421,EcoBrand Running Shoes,Sports,EcoBrand,New,684.93,582.19,15,479.15,12,3.7,1183,Yes,GHS
+1422,NovaTech Science Book,Books,NovaTech,Refurbished,159.33,127.46,20,96.71,177,4.6,668,No,GHS
+1423,SwiftMart Gloves,Clothing,SwiftMart,Refurbished,911.0,911.0,0,766.72,183,4.3,699,Yes,GHS
+1424,PrimeLine Science Kit,Toys,PrimeLine,Refurbished,1707.86,1537.07,10,1204.41,109,3.2,603,Yes,GHS
+1425,BoldCraft Action Figure,Toys,BoldCraft,Refurbished,257.86,244.97,5,188.89,68,4.7,1386,Yes,GHS
+1426,NovaTech Lipstick,Beauty,NovaTech,New,1010.25,959.74,5,774.64,99,4.4,1777,No,GHS
+1427,EcoBrand Stuffed Animal,Toys,EcoBrand,Refurbished,1768.64,1591.78,10,1302.63,133,4.1,1836,No,GHS
+1428,TrueValue Dress,Clothing,TrueValue,New,1962.17,1569.74,20,1303.62,76,4.4,791,Yes,GHS
+1429,NeoCore Mouse,Electronics,NeoCore,New,5125.85,4356.97,15,3229.39,98,4.5,1525,Yes,GHS
+1430,BoldCraft Smartphone,Electronics,BoldCraft,New,32572.19,29314.97,10,22473.44,136,3.7,1276,Yes,GHS
+1431,SkyBlue LEGO Set,Toys,SkyBlue,Open Box,832.48,665.98,20,541.7,92,4.3,677,No,GHS
+1432,EcoBrand Building Blocks,Toys,EcoBrand,New,729.28,583.42,20,415.88,177,3.8,1680,Yes,GHS
+1433,NovaTech Football,Sports,NovaTech,New,8833.52,7508.49,15,5407.67,14,4.6,651,Yes,GHS
+1434,LuxeGoods Cushion,Home & Garden,LuxeGoods,New,12251.17,10413.49,15,8023.66,160,3.7,1544,Yes,GHS
+1435,NovaTech Art Book,Books,NovaTech,New,596.31,566.49,5,420.17,102,4.7,1347,No,GHS
+1436,LuxeGoods Basketball,Sports,LuxeGoods,Open Box,2954.71,2511.5,15,1931.42,106,4.6,615,Yes,GHS
+1437,NeoCore Mouse,Electronics,NeoCore,Refurbished,22462.48,21339.36,5,15099.71,8,4.1,1139,Yes,GHS
+1438,EcoBrand Serum,Beauty,EcoBrand,New,897.87,763.19,15,644.18,110,3.9,330,Yes,GHS
+1439,PrimeLine Headphones,Electronics,PrimeLine,New,1124.52,955.84,15,731.01,93,3.3,39,No,GHS
+1440,LuxeGoods Mouse,Electronics,LuxeGoods,New,14459.38,12290.47,15,9006.36,197,3.1,1876,Yes,GHS
+1441,TrueValue Sneakers,Clothing,TrueValue,Refurbished,2913.81,2331.05,20,1965.15,62,3.3,1509,Yes,GHS
+1442,PeakEdge Vase,Home & Garden,PeakEdge,Refurbished,4221.78,4010.69,5,2977.53,44,3.1,338,Yes,GHS
+1443,NovaTech Power Bank,Electronics,NovaTech,New,2887.78,2743.39,5,2058.4,138,4.6,176,No,GHS
+1444,PrimeLine Novel,Books,PrimeLine,New,1091.31,1036.74,5,816.38,107,4.0,679,Yes,GHS
+1445,TrueValue Board Game,Toys,TrueValue,Refurbished,1998.95,1998.95,0,1521.78,196,4.9,819,Yes,GHS
+1446,NovaTech Swimming Goggles,Sports,NovaTech,Refurbished,10432.73,9389.46,10,7547.63,8,3.4,1647,No,GHS
+1447,SkyBlue Yoga Mat,Sports,SkyBlue,Refurbished,11689.34,11689.34,0,9574.97,50,4.6,674,Yes,GHS
+1448,PrimeLine Remote Control Car,Toys,PrimeLine,New,236.15,212.53,10,172.16,121,4.3,875,Yes,GHS
+1449,BoldCraft Charger,Electronics,BoldCraft,New,13999.54,13999.54,0,10700.33,166,4.5,1404,Yes,GHS
+1450,SkyBlue Stuffed Animal,Toys,SkyBlue,New,1368.42,1094.74,20,895.15,149,4.1,1711,Yes,GHS
+1451,LuxeGoods Hoodie,Clothing,LuxeGoods,Refurbished,2323.35,1974.85,15,1407.52,62,3.8,1355,Yes,GHS
+1452,TrueValue Children's Book,Books,TrueValue,New,244.02,244.02,0,191.13,64,4.5,1380,No,GHS
+1453,PeakEdge Headphones,Electronics,PeakEdge,New,7515.56,7515.56,0,6344.7,93,4.4,1763,Yes,GHS
+1454,NovaTech Food Processor,Kitchen,NovaTech,New,967.93,919.53,5,706.88,181,3.8,1762,Yes,GHS
+1455,LuxeGoods Curtains,Home & Garden,LuxeGoods,New,7360.13,6992.12,5,5931.29,193,4.2,1873,Yes,GHS
+1456,TrueValue Art Book,Books,TrueValue,Open Box,562.33,477.98,15,367.84,90,3.5,900,Yes,GHS
+1457,SkyBlue Air Fryer,Kitchen,SkyBlue,Open Box,1514.98,1363.48,10,1091.1,29,3.4,1680,Yes,GHS
+1458,PeakEdge Children's Book,Books,PeakEdge,New,826.76,785.42,5,551.08,197,3.1,301,Yes,GHS
+1459,NeoCore Smartphone,Electronics,NeoCore,Refurbished,33429.47,26743.58,20,22331.09,163,4.9,314,Yes,GHS
+1460,EcoBrand Curtains,Home & Garden,EcoBrand,Refurbished,8575.73,6860.58,20,5142.37,72,4.7,929,No,GHS
+1461,NovaTech Dictionary,Books,NovaTech,Refurbished,100.27,95.26,5,75.28,166,4.3,1620,No,GHS
+1462,EcoBrand Yoga Mat,Sports,EcoBrand,Refurbished,6966.56,6966.56,0,5589.2,137,3.1,857,Yes,GHS
+1463,SkyBlue Serum,Beauty,SkyBlue,Open Box,2293.32,2293.32,0,1811.15,76,4.5,545,Yes,GHS
+1464,SwiftMart Coffee Maker,Kitchen,SwiftMart,Open Box,2251.82,1801.46,20,1303.71,163,4.5,406,Yes,GHS
+1465,LuxeGoods Biography,Books,LuxeGoods,New,75.25,75.25,0,56.83,40,4.1,455,Yes,GHS
+1466,NovaTech Toaster,Kitchen,NovaTech,New,4007.87,3807.48,5,3030.74,25,3.9,173,Yes,GHS
+1467,PeakEdge Charger,Electronics,PeakEdge,Refurbished,10095.48,8581.16,15,6289.42,100,3.2,365,No,GHS
+1468,BoldCraft Building Blocks,Toys,BoldCraft,Open Box,907.0,816.3,10,688.85,33,4.8,1832,Yes,GHS
+1469,EcoBrand Nail Polish,Beauty,EcoBrand,New,1959.81,1665.84,15,1273.12,22,3.8,979,Yes,GHS
+1470,NeoCore Keyboard,Electronics,NeoCore,New,34076.35,30668.72,10,25277.91,16,4.6,1740,Yes,GHS
+1471,TrueValue Mascara,Beauty,TrueValue,Open Box,2954.73,2511.52,15,1914.67,195,4.7,1792,Yes,GHS
+1472,BoldCraft Straightener,Beauty,BoldCraft,New,2927.47,2488.35,15,1823.63,120,3.0,27,Yes,GHS
+1473,EcoBrand Coffee Maker,Kitchen,EcoBrand,Refurbished,1859.43,1859.43,0,1473.07,185,4.7,1098,Yes,GHS
+1474,SkyBlue Wall Art,Home & Garden,SkyBlue,New,19818.43,18827.51,5,15518.89,130,4.9,302,Yes,GHS
+1475,TrueValue Knife Set,Kitchen,TrueValue,New,4713.01,4713.01,0,3857.86,153,3.7,15,Yes,GHS
+1476,SkyBlue Art Book,Books,SkyBlue,Open Box,369.29,350.83,5,296.7,45,4.8,567,Yes,GHS
+1477,PeakEdge Jeans,Clothing,PeakEdge,Refurbished,2625.78,2100.62,20,1752.24,137,3.5,1366,Yes,GHS
+1478,LuxeGoods Basketball,Sports,LuxeGoods,New,1585.56,1347.73,15,1114.36,87,4.7,1146,Yes,GHS
+1479,LuxeGoods Card Game,Toys,LuxeGoods,Open Box,3484.83,3136.35,10,2229.92,180,3.0,807,Yes,GHS
+1480,EcoBrand Gloves,Clothing,EcoBrand,New,1423.43,1138.74,20,949.97,99,4.6,535,Yes,GHS
+1481,PeakEdge Tennis Racket,Sports,PeakEdge,New,8561.3,7277.1,15,5626.79,158,4.0,1990,Yes,GHS
+1482,PeakEdge Boots,Clothing,PeakEdge,New,269.55,215.64,20,181.03,112,4.6,438,Yes,GHS
+1483,BoldCraft Hair Dryer,Beauty,BoldCraft,New,2619.74,2095.79,20,1589.63,121,4.5,566,Yes,GHS
+1484,NovaTech Bookshelf,Home & Garden,NovaTech,New,5625.74,4500.59,20,3700.92,175,4.3,1623,Yes,GHS
+1485,NovaTech Smartwatch,Electronics,NovaTech,New,26137.66,24830.78,5,20495.21,130,4.7,1890,Yes,GHS
+1486,NeoCore Running Shoes,Sports,NeoCore,New,1226.56,1103.9,10,842.45,121,4.1,738,No,GHS
+1487,TrueValue Jacket,Clothing,TrueValue,New,3389.02,2711.22,20,2153.53,83,4.6,1140,Yes,GHS
+1488,BoldCraft Children's Book,Books,BoldCraft,Open Box,685.49,582.67,15,442.55,21,4.9,531,Yes,GHS
+1489,EcoBrand Power Bank,Electronics,EcoBrand,New,5182.78,4923.64,5,4014.11,103,4.9,1797,Yes,GHS
+1490,SkyBlue Dumbbell Set,Sports,SkyBlue,New,7001.47,6301.32,10,5207.92,107,4.8,818,Yes,GHS
+1491,NovaTech Basketball,Sports,NovaTech,Refurbished,4155.54,3532.21,15,2603.98,140,3.7,214,No,GHS
+1492,PeakEdge Suit,Clothing,PeakEdge,Refurbished,3865.54,3285.71,15,2701.17,149,4.0,812,No,GHS
+1493,PeakEdge Children's Book,Books,PeakEdge,New,572.7,486.8,15,404.73,70,4.6,297,Yes,GHS
+1494,EcoBrand Rice Cooker,Kitchen,EcoBrand,Open Box,1779.37,1690.4,5,1296.28,160,4.3,400,Yes,GHS
+1495,NovaTech Monitor,Electronics,NovaTech,New,30647.22,26050.14,15,20608.7,3,3.1,876,Yes,GHS
+1496,TrueValue Dictionary,Books,TrueValue,Open Box,223.81,201.43,10,162.01,46,3.2,207,Yes,GHS
+1497,PrimeLine Smartwatch,Electronics,PrimeLine,Open Box,27139.77,24425.79,10,17644.84,189,3.2,1381,Yes,GHS
+1498,PeakEdge Tennis Racket,Sports,PeakEdge,New,2400.5,2040.42,15,1668.09,32,4.8,324,Yes,GHS
+1499,PeakEdge Rug,Home & Garden,PeakEdge,Refurbished,6667.09,5667.03,15,4529.25,55,3.1,527,No,GHS
+1500,NovaTech Blender,Kitchen,NovaTech,Open Box,7979.79,6383.83,20,4932.06,164,4.3,301,Yes,GHS
+1501,SwiftMart LEGO Set,Toys,SwiftMart,Open Box,2934.57,2347.66,20,1967.56,157,3.1,1799,No,GHS
+1502,TrueValue Blender,Kitchen,TrueValue,New,8273.67,6618.94,20,5369.42,27,3.6,42,Yes,GHS
+1503,TrueValue Serum,Beauty,TrueValue,New,827.66,744.89,10,531.15,56,4.3,642,Yes,GHS
+1504,EcoBrand Rug,Home & Garden,EcoBrand,Refurbished,17317.33,14719.73,15,11234.75,80,3.6,1320,Yes,GHS
+1505,LuxeGoods Dumbbell Set,Sports,LuxeGoods,New,4048.59,3238.87,20,2492.61,47,3.3,1563,No,GHS
+1506,LuxeGoods Speaker,Electronics,LuxeGoods,Open Box,5260.68,4734.61,10,3855.14,95,4.4,804,Yes,GHS
+1507,NovaTech Hair Dryer,Beauty,NovaTech,Open Box,241.99,229.89,5,175.3,40,4.5,1124,Yes,GHS
+1508,BoldCraft Building Blocks,Toys,BoldCraft,Open Box,2620.7,2489.66,5,2106.78,134,3.0,985,Yes,GHS
+1509,PeakEdge Headphones,Electronics,PeakEdge,New,26344.74,26344.74,0,21992.82,28,3.7,1706,Yes,GHS
+1510,BoldCraft Mirror,Home & Garden,BoldCraft,New,14500.95,13050.86,10,9460.82,109,4.5,590,No,GHS
+1511,NeoCore T-Shirt,Clothing,NeoCore,New,3122.76,2498.21,20,1970.03,199,3.5,1694,Yes,GHS
+1512,SwiftMart Mouse,Electronics,SwiftMart,New,20589.4,18530.46,10,13883.41,185,4.3,1330,Yes,GHS
+1513,NeoCore Bicycle,Sports,NeoCore,New,6530.96,6204.41,5,5064.11,81,4.3,1460,Yes,GHS
+1514,SwiftMart Straightener,Beauty,SwiftMart,Open Box,328.82,328.82,0,236.38,21,3.7,1671,Yes,GHS
+1515,BoldCraft Straightener,Beauty,BoldCraft,New,1380.6,1242.54,10,933.46,60,4.6,1456,No,GHS
+1516,SkyBlue Bookshelf,Home & Garden,SkyBlue,New,8582.96,8582.96,0,7278.68,155,4.2,961,No,GHS
+1517,PrimeLine Running Shoes,Sports,PrimeLine,New,4599.82,3679.86,20,2990.32,18,3.2,285,No,GHS
+1518,SkyBlue Puzzle,Toys,SkyBlue,New,1102.79,992.51,10,792.03,29,4.0,747,Yes,GHS
+1519,SwiftMart LEGO Set,Toys,SwiftMart,New,1709.48,1453.06,15,1160.64,139,4.0,1817,Yes,GHS
+1520,NovaTech Smartwatch,Electronics,NovaTech,New,37317.37,31719.76,15,26405.72,125,4.6,443,Yes,GHS
