@@ -1,10 +1,10 @@
 product_id,product_name,category,brand,condition,original_price_ghs,selling_price_ghs,discount_percent,min_acceptable_price_ghs,stock_quantity,rating,num_reviews,negotiable,currency
 1001,Double Cheeseburger,Kitchen,Bosch,Open Box,2558.71,2046.97,20,1502.36,109,3.2,263,Yes,GHS
-1002,Xiaomi Smartphone,Electronics,Xiaomi,New,25540.6,22986.54,10,17591.46,176,3.6,1255,Yes,GHS
+1002,Iphone 15,Electronics,Apple,New,25540.6,22986.54,10,17591.46,176,3.6,1255,Yes,GHS
 1003,Ralph Lauren Jeans,Clothing,Ralph Lauren,New,4437.5,4215.62,5,3202.89,35,4.1,999,No,GHS
 1004,Longman Biography,Books,Longman,New,1145.06,1145.06,0,868.91,60,4.8,447,No,GHS
 1005,Yonex Football,Sports,Yonex,New,7320.16,6222.14,15,5074.96,50,4.6,1610,No,GHS
-1006,Xiaomi Smartphone,Electronics,Xiaomi,New,16624.92,14962.43,10,11669.76,178,4.7,1680,Yes,GHS
+1006,Iphone 14,Electronics,Apple,New,16624.92,14962.43,10,11669.76,178,4.7,1680,Yes,GHS
 1007,Bosch Cookware Set,Kitchen,Bosch,New,6318.82,5055.06,20,3596.04,194,3.1,1659,Yes,GHS
 1008,Longman Textbook,Books,Longman,New,708.86,637.97,10,488.41,140,4.0,443,Yes,GHS
 1009,Broyhill Vase,Home & Garden,Broyhill,Refurbished,5152.73,4895.09,5,3734.86,29,4.1,352,Yes,GHS
