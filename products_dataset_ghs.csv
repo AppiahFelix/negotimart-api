@@ -1,5 +1,5 @@
 product_id,product_name,category,brand,condition,original_price_ghs,selling_price_ghs,discount_percent,min_acceptable_price_ghs,stock_quantity,rating,num_reviews,negotiable,currency
-1001,Double Cheeseburger,Kitchen,Bosch,Open Box,2558.71,2046.97,20,1502.36,109,3.2,263,Yes,GHS
+1001,Rice Cooker,Kitchen,Bosch,Open Box,2558.71,2046.97,20,1502.36,109,3.2,263,Yes,GHS
 1002,Iphone 15,Electronics,Apple,New,25540.6,22986.54,10,17591.46,176,3.6,1255,Yes,GHS
 1003,Ralph Lauren Jeans,Clothing,Ralph Lauren,New,4437.5,4215.62,5,3202.89,35,4.1,999,No,GHS
 1004,Longman Biography,Books,Longman,New,1145.06,1145.06,0,868.91,60,4.8,447,No,GHS
