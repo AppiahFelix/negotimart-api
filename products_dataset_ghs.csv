@@ -5,9 +5,9 @@ product_id,product_name,category,brand,condition,original_price_ghs,selling_pric
 1004,Wayfair Lamp,Home & Garden,Wayfair,Refurbished,14151.9,11321.52,20,8354.67,37,3.7,997,Yes,GHS
 1005,Yonex Football,Sports,Yonex,New,7320.16,6222.14,15,5074.96,50,4.6,1610,No,GHS
 1006,LG Power Bank,Electronics,LG,Open Box,9950.33,9452.81,5,7723.78,33,4.1,493,Yes,GHS
-1007,Bosch Cookware Set,Kitchen,Bosch,New,6318.82,5055.06,20,3596.04,194,3.1,1659,Yes,GHS
-1008,Longman Textbook,Books,Longman,New,708.86,637.97,10,488.41,140,4.0,443,Yes,GHS
-1009,Broyhill Vase,Home & Garden,Broyhill,Refurbished,5152.73,4895.09,5,3734.86,29,4.1,352,Yes,GHS
+1007,LG Laptop,Electronics,LG,New,979.4,979.4,0,725.02,37,4.9,1023,No,GHS
+1008,Huawei Keyboard,Electronics,Huawei,Refurbished,24247.8,21823.02,10,17191.95,91,4.7,1886,No,GHS
+1009,Dell Mouse,Electronics,Dell,New,20617.2,17524.62,15,12847.22,99,4.2,465,Yes,GHS
 1010,Calvin Klein Jacket,Clothing,Calvin Klein,New,2252.71,2252.71,0,1580.2,106,3.5,1540,Yes,GHS
 1011,Hot Wheels Board Game,Toys,Hot Wheels,Open Box,2714.86,2579.12,5,1895.32,41,4.2,1248,Yes,GHS
 1012,Huawei Keyboard,Electronics,Huawei,Refurbished,31014.21,27912.79,10,21164.98,68,3.2,312,Yes,GHS
@@ -66,7 +66,7 @@ product_id,product_name,category,brand,condition,original_price_ghs,selling_pric
 1065,Maybelline Moisturizer,Beauty,Maybelline,New,1138.13,967.41,15,817.6,197,4.0,342,Yes,GHS
 1066,Oxford Novel,Books,Oxford,Open Box,1193.52,1193.52,0,974.81,39,3.5,212,No,GHS
 1067,Cambridge Novel,Books,Cambridge,Open Box,192.95,183.3,5,138.47,108,4.2,543,Yes,GHS
-1068,Gucci Dress,Clothing,Gucci,New,4065.26,3455.47,15,2752.62,141,4.0,1939,Yes,GHS
+1068,Speedo Tennis Racket,Sports,Speedo,Refurbished,3903.02,3317.57,15,2653.61,23,3.4,353,Yes,GHS
 1069,Instant Pot Coffee Maker,Kitchen,Instant Pot,New,3765.68,3389.11,10,2799.43,42,3.4,359,Yes,GHS
 1070,Adidas Scarf,Clothing,Adidas,New,3199.36,2559.49,20,2142.42,155,4.3,485,Yes,GHS
 1071,H&M Hoodie,Clothing,H&M,New,2762.76,2486.48,10,2038.31,132,3.8,68,Yes,GHS
