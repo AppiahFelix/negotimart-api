@@ -189,6 +189,7 @@ class Order(BaseModel):
     city: Optional[str] = ""
     region: str
     payment: str
+    txn_id: Optional[str] = ""
     total: float
     items: List[OrderItem]
     date: str
