@@ -1,12 +1,10 @@
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from typing import Optional
+from typing import Optional, List
 import csv
 import math
 import os
-import urllib.request
-import urllib.parse
 import json
 
 app = FastAPI(title="NegotiMart API", version="1.0.0")
@@ -20,33 +18,20 @@ app.add_middleware(
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CSV_PATH = os.getenv("CSV_PATH", os.path.join(BASE_DIR, "products_dataset_ghs.csv"))
-PEXELS_KEY = os.getenv("PEXELS_KEY", "E9M3oSGSu2JwuCBi0WvpT2yDwplcD1AKRiQil15Y78JxgbchsGmA4a1a")
+ORDERS_PATH = os.path.join(BASE_DIR, "orders.json")
 
-# Cache images so we don't hit the API every request
-_image_cache = {}
-
-def get_pexels_image(query: str) -> str:
-    if query in _image_cache:
-        return _image_cache[query]
+def load_orders() -> list:
+    if not os.path.exists(ORDERS_PATH):
+        return []
     try:
-        url = f"https://api.pexels.com/v1/search?query={urllib.parse.quote(query)}&per_page=1&orientation=square"
-        req = urllib.request.Request(url, headers={"Authorization": PEXELS_KEY})
-        with urllib.request.urlopen(req, timeout=5) as resp:
-            data = json.loads(resp.read())
-            if data.get("photos"):
-                img = data["photos"][0]["src"]["medium"]
-                _image_cache[query] = img
-                return img
+        with open(ORDERS_PATH, "r", encoding="utf-8") as f:
+            return json.load(f)
     except Exception:
-        pass
-    _image_cache[query] = ""
-    return ""
+        return []
 
-def extract_product_type(name: str) -> str:
-    """Extract the product type (last words) from a brand + product name."""
-    parts = name.strip().split(" ")
-    # product type is everything after the brand (first word)
-    return " ".join(parts[1:]) if len(parts) > 1 else name
+def save_orders(orders: list):
+    with open(ORDERS_PATH, "w", encoding="utf-8") as f:
+        json.dump(orders, f, ensure_ascii=False, indent=2)
 
 def load_products():
     products = []
@@ -54,12 +39,9 @@ def load_products():
         reader = csv.DictReader(f)
         for row in reader:
             try:
-                name = row["product_name"].strip()
-                product_type = extract_product_type(name)
-                image = get_pexels_image(product_type)
                 products.append({
                     "product_id":           int(row["product_id"]),
-                    "product_name":         name,
+                    "product_name":         row["product_name"].strip(),
                     "category":             row["category"].strip(),
                     "brand":                row["brand"].strip(),
                     "condition":            row["condition"].strip(),
@@ -72,7 +54,7 @@ def load_products():
                     "num_reviews":          int(float(row["num_reviews"])),
                     "negotiable":           row["negotiable"].strip().lower() == "yes",
                     "currency":             "GHS",
-                    "image":                image,
+                    "image":                None,
                 })
             except Exception:
                 continue
@@ -92,10 +74,9 @@ def get_products(
     min_price: Optional[float] = Query(None),
     max_price: Optional[float] = Query(None),
     page: int = Query(1, ge=1),
-    limit: int = Query(20, ge=1, le=100),
+    limit: int = Query(20, ge=1, le=520),
 ):
     products = load_products()
-
     if category:
         products = [p for p in products if p["category"].lower() == category.lower()]
     if negotiable is not None:
@@ -106,19 +87,11 @@ def get_products(
         products = [p for p in products if p["selling_price"] >= min_price]
     if max_price is not None:
         products = [p for p in products if p["selling_price"] <= max_price]
-
     total = len(products)
     total_pages = math.ceil(total / limit)
     start = (page - 1) * limit
     end = start + limit
-
-    return {
-        "total": total,
-        "page": page,
-        "limit": limit,
-        "total_pages": total_pages,
-        "products": products[start:end],
-    }
+    return {"total": total, "page": page, "limit": limit, "total_pages": total_pages, "products": products[start:end]}
 
 
 @app.get("/products/{product_id}")
@@ -144,14 +117,7 @@ def get_stats():
     avg_price = round(sum(p["selling_price"] for p in products) / len(products), 2) if products else 0
     avg_discount = round(sum(p["discount_percent"] for p in products) / len(products), 1) if products else 0
     cats = set(p["category"] for p in products)
-    return {
-        "total_products": len(products),
-        "total_categories": len(cats),
-        "negotiable_products": neg,
-        "avg_selling_price": avg_price,
-        "avg_discount": avg_discount,
-        "currency": "GHS",
-    }
+    return {"total_products": len(products), "total_categories": len(cats), "negotiable_products": neg, "avg_selling_price": avg_price, "avg_discount": avg_discount, "currency": "GHS"}
 
 
 class NegotiationCheck(BaseModel):
@@ -164,11 +130,9 @@ def check_offer(body: NegotiationCheck):
     product = next((p for p in products if p["product_id"] == body.product_id), None)
     if not product:
         raise HTTPException(status_code=404, detail="Product not found")
-
     selling_price = product["selling_price"]
     min_price = product["min_acceptable_price"]
     offered = body.offered_price
-
     if offered >= selling_price:
         return {"decision": "accept", "final_price": selling_price, "message": "Great, full price accepted!"}
     elif offered >= min_price:
@@ -177,3 +141,48 @@ def check_offer(body: NegotiationCheck):
         counter = round((offered + selling_price) / 2, 2)
         counter = max(counter, min_price)
         return {"decision": "counter", "counter_price": counter, "message": f"We can offer GH₵{counter:,.2f}"}
+
+
+# ── ORDERS
+class OrderItem(BaseModel):
+    name: str
+    qty: int
+    price: float
+    negotiated: bool
+    id: Optional[int] = None
+
+class Order(BaseModel):
+    ref: str
+    name: str
+    phone: str
+    email: Optional[str] = ""
+    address: str
+    city: Optional[str] = ""
+    region: str
+    payment: str
+    txn_id: Optional[str] = ""
+    total: float
+    items: List[OrderItem]
+    date: str
+    status: str = "New"
+
+@app.post("/orders")
+def create_order(order: Order):
+    orders = load_orders()
+    orders.insert(0, order.dict())
+    save_orders(orders)
+    return {"success": True, "ref": order.ref, "message": "Order saved successfully"}
+
+@app.get("/orders")
+def get_orders():
+    return {"orders": load_orders()}
+
+@app.patch("/orders/{ref}")
+def update_order_status(ref: str, status: str = Query(...)):
+    orders = load_orders()
+    for order in orders:
+        if order["ref"] == ref:
+            order["status"] = status
+            save_orders(orders)
+            return {"success": True, "ref": ref, "status": status}
+    raise HTTPException(status_code=404, detail="Order not found")
