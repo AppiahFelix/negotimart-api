@@ -5,8 +5,6 @@ from typing import Optional, List
 import csv
 import math
 import os
-import urllib.request
-import urllib.parse
 import json
 
 app = FastAPI(title="NegotiMart API", version="1.0.0")
@@ -21,30 +19,6 @@ app.add_middleware(
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CSV_PATH = os.getenv("CSV_PATH", os.path.join(BASE_DIR, "products_dataset_ghs.csv"))
 ORDERS_PATH = os.path.join(BASE_DIR, "orders.json")
-PEXELS_KEY = os.getenv("PEXELS_KEY", "E9M3oSGSu2JwuCBi0WvpT2yDwplcD1AKRiQil15Y78JxgbchsGmA4a1a")
-
-_image_cache = {}
-
-def get_pexels_image(query: str) -> str:
-    if query in _image_cache:
-        return _image_cache[query]
-    try:
-        url = f"https://api.pexels.com/v1/search?query={urllib.parse.quote(query)}&per_page=1&orientation=square"
-        req = urllib.request.Request(url, headers={"Authorization": PEXELS_KEY})
-        with urllib.request.urlopen(req, timeout=5) as resp:
-            data = json.loads(resp.read())
-            if data.get("photos"):
-                img = data["photos"][0]["src"]["medium"]
-                _image_cache[query] = img
-                return img
-    except Exception:
-        pass
-    _image_cache[query] = ""
-    return ""
-
-def extract_product_type(name: str) -> str:
-    parts = name.strip().split(" ")
-    return " ".join(parts[1:]) if len(parts) > 1 else name
 
 def load_orders() -> list:
     if not os.path.exists(ORDERS_PATH):
@@ -65,12 +39,9 @@ def load_products():
         reader = csv.DictReader(f)
         for row in reader:
             try:
-                name = row["product_name"].strip()
-                product_type = extract_product_type(name)
-                image = get_pexels_image(product_type)
                 products.append({
                     "product_id":           int(row["product_id"]),
-                    "product_name":         name,
+                    "product_name":         row["product_name"].strip(),
                     "category":             row["category"].strip(),
                     "brand":                row["brand"].strip(),
                     "condition":            row["condition"].strip(),
@@ -83,7 +54,7 @@ def load_products():
                     "num_reviews":          int(float(row["num_reviews"])),
                     "negotiable":           row["negotiable"].strip().lower() == "yes",
                     "currency":             "GHS",
-                    "image":                image,
+                    "image":                None,
                 })
             except Exception:
                 continue
