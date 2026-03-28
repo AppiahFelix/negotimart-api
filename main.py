@@ -19,6 +19,20 @@ app.add_middleware(
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CSV_PATH = os.getenv("CSV_PATH", os.path.join(BASE_DIR, "products_dataset_ghs.csv"))
 ORDERS_PATH = os.path.join(BASE_DIR, "orders.json")
+SOLDOUT_PATH = os.path.join(BASE_DIR, "soldout.json")
+
+def load_soldout() -> list:
+    if not os.path.exists(SOLDOUT_PATH):
+        return []
+    try:
+        with open(SOLDOUT_PATH, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return []
+
+def save_soldout(ids: list):
+    with open(SOLDOUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(ids, f)
 
 def load_orders() -> list:
     if not os.path.exists(ORDERS_PATH):
@@ -186,3 +200,18 @@ def update_order_status(ref: str, status: str = Query(...)):
             save_orders(orders)
             return {"success": True, "ref": ref, "status": status}
     raise HTTPException(status_code=404, detail="Order not found")
+
+# ── SOLD OUT
+@app.get("/soldout")
+def get_soldout():
+    return {"soldout": load_soldout()}
+
+@app.post("/soldout")
+def update_soldout(ids: List[int]):
+    save_soldout(ids)
+    return {"success": True, "count": len(ids)}
+
+@app.delete("/soldout")
+def reset_soldout():
+    save_soldout([])
+    return {"success": True, "message": "Stock reset"}
