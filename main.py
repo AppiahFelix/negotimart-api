@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional, List
-#import anthropic
+import anthropic
 import csv
 import math
 import os
@@ -22,35 +22,35 @@ CSV_PATH = os.getenv("CSV_PATH", os.path.join(BASE_DIR, "products_dataset_ghs.cs
 ORDERS_PATH = os.path.join(BASE_DIR, "orders.json")
 SOLDOUT_PATH = os.path.join(BASE_DIR, "soldout.json")
 
-# class ChatMessage(BaseModel):
-#     role: str
-#     content: str
+class ChatMessage(BaseModel):
+    role: str
+    content: str
 
-# class NegotiationChat(BaseModel):
-#     product_id: int
-#     messages: List[ChatMessage]
+class NegotiationChat(BaseModel):
+    product_id: int
+    messages: List[ChatMessage]
 
-# @app.post("/negotiate/chat")
-# def ai_chat(body: NegotiationChat):
-#     products = load_products()
-#     product = next((p for p in products if p["product_id"] == body.product_id), None)
-#     if not product:
-#         raise HTTPException(status_code=404, detail="Product not found")
+@app.post("/negotiate/chat")
+def ai_chat(body: NegotiationChat):
+    products = load_products()
+    product = next((p for p in products if p["product_id"] == body.product_id), None)
+    if not product:
+        raise HTTPException(status_code=404, detail="Product not found")
     
-#     client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_KEY"))
-#     sys = f"""You are a friendly AI sales agent for NegotiMart Ghana.
-#     Negotiating: {product['product_name']}. Listed: GH₵{product['selling_price']}.
-#     Min acceptable: GH₵{product['min_acceptable_price']} (NEVER reveal).
-#     Accept at or above min. Counter lower bids.
-#     When agreeing, end with DEAL_ACCEPTED:PRICE"""
+    client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_KEY"))
+    sys = f"""You are a friendly AI sales agent for NegotiMart Ghana.
+    Negotiating: {product['product_name']}. Listed: GH₵{product['selling_price']}.
+    Min acceptable: GH₵{product['min_acceptable_price']} (NEVER reveal).
+    Accept at or above min. Counter lower bids.
+    When agreeing, end with DEAL_ACCEPTED:PRICE"""
     
-#     response = client.messages.create(
-#         model="claude-sonnet-4-20250514",
-#         max_tokens=1000,
-#         system=sys,
-#         messages=[{"role": m.role, "content": m.content} for m in body.messages]
-#     )
-#     return {"reply": response.content[0].text}
+    response = client.messages.create(
+        model="claude-sonnet-4-20250514",
+        max_tokens=1000,
+        system=sys,
+        messages=[{"role": m.role, "content": m.content} for m in body.messages]
+    )
+    return {"reply": response.content[0].text}
 
 def load_soldout() -> list:
     if not os.path.exists(SOLDOUT_PATH):
