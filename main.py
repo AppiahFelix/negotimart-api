@@ -2,6 +2,8 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional, List
+from slowapi import Limiter
+from slowapi.util import get_remote_address
 import anthropic
 import csv
 import math
@@ -21,6 +23,13 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CSV_PATH = os.getenv("CSV_PATH", os.path.join(BASE_DIR, "products_dataset_ghs.csv"))
 ORDERS_PATH = os.path.join(BASE_DIR, "orders.json")
 SOLDOUT_PATH = os.path.join(BASE_DIR, "soldout.json")
+
+limiter = Limiter(key_func=get_remote_address)
+app.state.limiter = limiter
+
+@app.post("/negotiate/chat")
+@limiter.limit("20/minute")  # max 20 messages per minute per user
+def ai_chat(request: Request, body: NegotiationChat):
 
 class ChatMessage(BaseModel):
     role: str
@@ -186,6 +195,50 @@ def check_offer(body: NegotiationCheck):
         counter = round((offered + selling_price) / 2, 2)
         counter = max(counter, min_price)
         return {"decision": "counter", "counter_price": counter, "message": f"We can offer GH₵{counter:,.2f}"}
+
+@app.post("/negotiate/outcome")
+def record_outcome(product_id: int, offered_price: float, accepted: bool):
+    outcomes = load_outcomes()  # load from outcomes.json
+    outcomes.append({
+        "product_id": product_id,
+        "offered_price": offered_price,
+        "accepted": accepted,
+        "timestamp": str(datetime.now())
+    })
+    save_outcomes(outcomes)
+    return {"success": True}
+
+@app.get("/negotiate/smart-min/{product_id}")
+def get_smart_min(product_id: int):
+    products = load_products()
+    product = next((p for p in products if p["product_id"] == product_id), None)
+    outcomes = [o for o in load_outcomes() if o["product_id"] == product_id]
+    
+    # If stock is low, raise the floor (less desperate to sell)
+    # If many rejections, lower the floor slightly
+    base_min = product["min_acceptable_price"]
+    rejections = sum(1 for o in outcomes if not o["accepted"])
+    
+    if product["stock_quantity"] < 10:
+        smart_min = base_min * 1.1  # raise floor by 10% when stock is low
+    elif rejections > 20:
+        smart_min = base_min * 0.95  # lower floor by 5% if many rejections
+    else:
+        smart_min = base_min
+    
+    return {"smart_min": round(smart_min, 2)}
+
+@app.get("/negotiate/insights/{product_id}")
+def get_insights(product_id: int):
+    outcomes = [o for o in load_outcomes() if o["product_id"] == product_id]
+    if not outcomes:
+        return {"insight": ""}
+    
+    accepted = [o for o in outcomes if o["accepted"]]
+    avg_accepted = sum(o["offered_price"] for o in accepted) / len(accepted) if accepted else 0
+    
+    insight = f"Historical data: {len(accepted)} deals closed. Average accepted price: GH₵{avg_accepted:.2f}."
+    return {"insight": insight}
 
 
 # ── ORDERS
