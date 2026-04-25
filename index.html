@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NegotiMart</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- All styles in one dedicated file -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <div class="logo">Negoti<span>Mart</span></div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" id="tab-shop"  onclick="switchTab('shop')">🛍️ Shop</button>
+    <button class="nav-tab"        id="tab-admin" onclick="openAdminLogin()">⚙️ Admin</button>
+  </div>
+  <button class="cart-btn" onclick="openCart()">
+    🛒 Cart <span class="cart-count" id="cart-count">0</span>
+  </button>
+</nav>
+
+<!-- ── SHOP VIEW ── -->
+<div id="view-shop">
+  <div class="hero">
+    <h1>Shop Smarter, <span>Negotiate Better</span></h1>
+    <p>AI-powered price negotiation — all prices in Ghana Cedis (GH₵)</p>
+  </div>
+  <div class="filters"  id="filters"></div>
+  <div class="products" id="products">
+    <div class="loading-state">⏳ Loading products...</div>
+  </div>
+</div>
+
+<!-- ── ADMIN VIEW ── -->
+<div id="view-admin" style="display:none">
+  <div class="admin-wrap">
+    <div class="admin-header">
+      <h2>⚙️ Admin Panel</h2>
+      <div style="display:flex;gap:.75rem">
+        <button class="btn-primary" style="background:var(--red);opacity:.85" onclick="resetStock()">🔄 Reset Stock</button>
+        <button class="btn-primary" onclick="openAddModal()">+ Add Product</button>
+      </div>
+    </div>
+    <div class="admin-stats" id="admin-stats"></div>
+    <div class="admin-tabs">
+      <button class="admin-tab active" id="atab-products" onclick="switchAdminTab('products')">📦 Products</button>
+      <button class="admin-tab"        id="atab-orders"   onclick="switchAdminTab('orders')">🧾 Orders</button>
+    </div>
+
+    <!-- Products sub-view -->
+    <div id="admin-products-view">
+      <input class="admin-search" id="admin-search" placeholder="Search products..." oninput="renderAdminTable()"/>
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Image</th><th>Product</th><th>Category</th>
+            <th>Price (GH₵)</th><th>Original</th><th>Min Price</th>
+            <th>Stock</th><th>Negotiable</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="admin-tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- Orders sub-view -->
+    <div id="admin-orders-view" style="display:none">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+        <span id="orders-status" style="font-size:13px;color:var(--muted)"></span>
+        <button class="btn-primary" onclick="loadOrdersFromServer()" style="padding:8px 16px;font-size:13px">🔄 Refresh Orders</button>
+      </div>
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Ref</th><th>Customer</th><th>Phone</th><th>Region</th>
+            <th>Payment</th><th>Txn ID</th><th>Total</th><th>Items</th>
+            <th>Date</th><th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="orders-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ── MODAL CONTAINER (all popups render here) ── -->
+<div id="modal-container"></div>
+
+
+<!-- ── SCRIPTS (order matters) ── -->
+
+<!-- 1. App-wide constants (API URL, passwords, contact numbers) -->
+<script src="config.js"></script>
+
+<!-- 2. Shared helper functions (GHS formatter, toast, image map, sanitizer) -->
+<script src="utils.js"></script>
+
+<!-- 3. Shop, product grid, cart, checkout -->
+<script src="shop.js"></script>
+
+<!-- 4. AI negotiation chat engine -->
+<script src="negotiate.js"></script>
+
+<!-- 5. Admin panel (products table, orders, add/edit forms) -->
+<script src="admin.js"></script>
+
+<!-- 6. Shared modal close helper + boot -->
+<script>
+  // Shared across all modules
+  function handleOverlay(e) {
+    if (e.target.classList.contains('modal-overlay')) closeModal();
+  }
+  function closeModal() {
+    document.getElementById('modal-container').innerHTML = '';
+    currentProduct = null;
+    chatHistory    = [];
+  }
+
+  // Boot the app
+  initShop();
+
+  // Support direct URL access to admin: negotimart.html#admin
+  if (window.location.hash === '#admin') openAdminLogin();
+  window.addEventListener('hashchange', () => {
+    if (window.location.hash === '#admin') openAdminLogin();
+  });
+</script>
+
+</body>
+</html>
