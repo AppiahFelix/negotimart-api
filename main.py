@@ -5,6 +5,8 @@ from typing import Optional, List
 import csv, math, os, json
 from datetime import datetime
 import anthropic
+import psycopg2
+import psycopg2.extras
 
 app = FastAPI(title="NegotiMart API", version="3.0.0")
 
@@ -23,6 +25,14 @@ OUTCOMES_PATH = os.path.join(BASE_DIR, "outcomes.json")
 
 # API key lives on the server — never in the browser
 ANTHROPIC_KEY = os.getenv("ANTHROPIC_KEY", "")
+
+# Postgres (Supabase) connection string — set this in Render's Environment tab
+DATABASE_URL = os.getenv("DATABASE_URL", "")
+
+def get_db():
+    if not DATABASE_URL:
+        raise HTTPException(status_code=500, detail="DATABASE_URL is not configured on the server.")
+    return psycopg2.connect(DATABASE_URL, sslmode="require")
 
 
 # ─────────────────────────────────────────────────────
@@ -59,31 +69,42 @@ def save_outcomes(outcomes: list):
         json.dump(outcomes, f, ensure_ascii=False, indent=2)
 
 def load_products():
-    products = []
-    with open(CSV_PATH, newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            try:
-                products.append({
-                    "product_id":           int(row["product_id"]),
-                    "product_name":         row["product_name"].strip(),
-                    "category":             row["category"].strip(),
-                    "brand":                row["brand"].strip(),
-                    "condition":            row["condition"].strip(),
-                    "original_price":       round(float(row["original_price_ghs"]), 2),
-                    "selling_price":        round(float(row["selling_price_ghs"]), 2),
-                    "min_acceptable_price": round(float(row["min_acceptable_price_ghs"]), 2),
-                    "discount_percent":     int(float(row["discount_percent"])),
-                    "stock_quantity":       int(float(row["stock_quantity"])),
-                    "rating":               round(float(row["rating"]), 1),
-                    "num_reviews":          int(float(row["num_reviews"])),
-                    "negotiable":           row["negotiable"].strip().lower() == "yes",
-                    "currency":             "GHS",
-                    "image":                None,
-                })
-            except Exception:
-                continue
-    return products
+    """Loads the full product catalog from Postgres (Supabase)."""
+    conn = get_db()
+    try:
+        cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+        cur.execute("""
+            SELECT product_id, product_name, category, brand, condition,
+                   original_price, selling_price, min_acceptable_price,
+                   discount_percent, stock_quantity, rating, num_reviews,
+                   negotiable, currency, image
+            FROM products
+            ORDER BY product_id
+        """)
+        rows = cur.fetchall()
+        cur.close()
+        products = []
+        for row in rows:
+            products.append({
+                "product_id":           row["product_id"],
+                "product_name":         row["product_name"],
+                "category":             row["category"],
+                "brand":                row["brand"] or "",
+                "condition":            row["condition"] or "New",
+                "original_price":       round(float(row["original_price"]), 2),
+                "selling_price":        round(float(row["selling_price"]), 2),
+                "min_acceptable_price": round(float(row["min_acceptable_price"]), 2),
+                "discount_percent":     int(row["discount_percent"] or 0),
+                "stock_quantity":       int(row["stock_quantity"] or 0),
+                "rating":               round(float(row["rating"] or 0), 1),
+                "num_reviews":          int(row["num_reviews"] or 0),
+                "negotiable":           bool(row["negotiable"]),
+                "currency":             row["currency"] or "GHS",
+                "image":                row["image"],
+            })
+        return products
+    finally:
+        conn.close()
 
 
 # ─────────────────────────────────────────────────────
@@ -273,6 +294,103 @@ def get_product(product_id: int):
 @app.get("/categories")
 def get_categories():
     return {"categories": sorted(set(p["category"] for p in load_products()))}
+
+
+# ─────────────────────────────────────────────────────
+#  ADMIN — PRODUCT CREATE / UPDATE / DELETE
+#  All changes write straight to Postgres, so every
+#  customer sees them immediately on next page load.
+# ─────────────────────────────────────────────────────
+
+class ProductIn(BaseModel):
+    product_name:         str
+    category:              str
+    brand:                  Optional[str] = ""
+    condition:               Optional[str] = "New"
+    original_price:          float
+    selling_price:            float
+    min_acceptable_price:      float
+    discount_percent:           Optional[int] = None
+    stock_quantity:               int = 0
+    rating:                        Optional[float] = 4.5
+    num_reviews:                    Optional[int] = 0
+    negotiable:                      bool = True
+    image:                            Optional[str] = None
+
+@app.post("/products")
+def create_product(body: ProductIn):
+    discount = body.discount_percent
+    if discount is None:
+        discount = round((1 - body.selling_price / body.original_price) * 100) if body.original_price else 0
+
+    conn = get_db()
+    try:
+        cur = conn.cursor()
+        cur.execute("SELECT COALESCE(MAX(product_id), 9999) FROM products")
+        next_id = cur.fetchone()[0] + 1
+
+        cur.execute("""
+            INSERT INTO products (
+                product_id, product_name, category, brand, condition,
+                original_price, selling_price, min_acceptable_price,
+                discount_percent, stock_quantity, rating, num_reviews,
+                negotiable, currency, image
+            ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+        """, (
+            next_id, body.product_name, body.category, body.brand, body.condition,
+            body.original_price, body.selling_price, body.min_acceptable_price,
+            discount, body.stock_quantity, body.rating, body.num_reviews,
+            body.negotiable, "GHS", body.image
+        ))
+        conn.commit()
+        cur.close()
+        return {"success": True, "product_id": next_id}
+    finally:
+        conn.close()
+
+@app.put("/products/{product_id}")
+def update_product(product_id: int, body: ProductIn):
+    discount = body.discount_percent
+    if discount is None:
+        discount = round((1 - body.selling_price / body.original_price) * 100) if body.original_price else 0
+
+    conn = get_db()
+    try:
+        cur = conn.cursor()
+        cur.execute("""
+            UPDATE products SET
+                product_name = %s, category = %s, brand = %s, condition = %s,
+                original_price = %s, selling_price = %s, min_acceptable_price = %s,
+                discount_percent = %s, stock_quantity = %s, rating = %s,
+                num_reviews = %s, negotiable = %s, image = %s
+            WHERE product_id = %s
+        """, (
+            body.product_name, body.category, body.brand, body.condition,
+            body.original_price, body.selling_price, body.min_acceptable_price,
+            discount, body.stock_quantity, body.rating,
+            body.num_reviews, body.negotiable, body.image, product_id
+        ))
+        if cur.rowcount == 0:
+            raise HTTPException(status_code=404, detail=f"Product {product_id} not found")
+        conn.commit()
+        cur.close()
+        return {"success": True, "product_id": product_id}
+    finally:
+        conn.close()
+
+@app.delete("/products/{product_id}")
+def delete_product(product_id: int):
+    conn = get_db()
+    try:
+        cur = conn.cursor()
+        cur.execute("DELETE FROM products WHERE product_id = %s", (product_id,))
+        if cur.rowcount == 0:
+            raise HTTPException(status_code=404, detail=f"Product {product_id} not found")
+        conn.commit()
+        cur.close()
+        return {"success": True, "product_id": product_id}
+    finally:
+        conn.close()
 
 @app.get("/stats")
 def get_stats():
