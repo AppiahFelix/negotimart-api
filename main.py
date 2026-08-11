@@ -463,7 +463,9 @@ Rules:
         messages   = [{"role": m.role, "content": m.content} for m in body.messages]
     )
 
-    reply = response.content[0].text if response.content else "Sorry, please try again."
+    # Claude Sonnet 5 uses always-on extended thinking, so content[0] may be
+    # a ThinkingBlock rather than the text reply — find the text block explicitly.
+    reply = next((b.text for b in response.content if b.type == "text"), None) or "Sorry, please try again."
     return {"reply": reply}
 
 
