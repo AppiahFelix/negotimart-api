@@ -256,7 +256,7 @@ function handleFileUpload(e) {
   reader.readAsDataURL(file);
 }
 
-function saveProduct(editId) {
+async function saveProduct(editId) {
   const name     = document.getElementById('f-name').value.trim();
   const price    = parseFloat(document.getElementById('f-price').value);
   const original = parseFloat(document.getElementById('f-original').value);
@@ -264,38 +264,56 @@ function saveProduct(editId) {
   if (!name || !price || !original || !min) { alert('Please fill in name, prices and min price.'); return; }
 
   const finalImage = imgTabMode === 'url' ? (document.getElementById('f-image-url')?.value || '') : pendingImageData;
-  const data = {
-    name, price, original, min,
-    image:      finalImage || getProductImage(name) || null,
-    category:   document.getElementById('f-cat').value,
-    stock:      parseInt(document.getElementById('f-stock').value) || 0,
-    rating:     parseFloat(document.getElementById('f-rating').value) || 4.0,
-    reviews:    editId ? products.find(p => p.id === editId).reviews : 0,
-    negotiable: document.getElementById('f-neg').value === 'true',
-    discount:   Math.round((1 - price / original) * 100),
-    id:         editId || nextId++
+
+  // Payload matches the backend's ProductIn model
+  const payload = {
+    product_name:          name,
+    category:              document.getElementById('f-cat').value,
+    original_price:        original,
+    selling_price:         price,
+    min_acceptable_price:  min,
+    stock_quantity:        parseInt(document.getElementById('f-stock').value) || 0,
+    rating:                parseFloat(document.getElementById('f-rating').value) || 4.0,
+    negotiable:            document.getElementById('f-neg').value === 'true',
+    image:                 finalImage || getProductImage(name) || null,
   };
 
-  if (editId) {
-    const idx = products.findIndex(p => p.id === editId);
-    products[idx] = { ...products[idx], ...data };
-    showToast('Product updated!');
-  } else {
-    products.push(data);
-    showToast('Product added!');
+  const saveBtn = document.querySelector('.form-footer .btn-primary');
+  if (saveBtn) { saveBtn.disabled = true; saveBtn.textContent = 'Saving...'; }
+
+  try {
+    const url    = editId ? `${API_BASE}/products/${editId}` : `${API_BASE}/products`;
+    const method = editId ? 'PUT' : 'POST';
+    const res = await fetch(url, {
+      method,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (!res.ok) throw new Error(`Server responded ${res.status}`);
+
+    showToast(editId ? 'Product updated!' : 'Product added!');
+    closeModal();
+    await initShop();          // reload products from the database
+    renderAdminStats();
+    renderAdminTable();
+  } catch (e) {
+    alert('Could not save product — ' + e.message + '\n\nCheck that DATABASE_URL is set correctly on the server.');
+    if (saveBtn) { saveBtn.disabled = false; saveBtn.textContent = editId ? 'Save Changes' : 'Add Product'; }
   }
-  closeModal();
-  renderAdminStats();
-  renderAdminTable();
-  renderFilters();
-  renderProducts();
 }
 
-function deleteProduct(id) {
-  if (!confirm('Delete this product?')) return;
-  products = products.filter(p => p.id !== id);
-  renderAdminStats(); renderAdminTable(); renderFilters(); renderProducts();
-  showToast('Product deleted');
+async function deleteProduct(id) {
+  if (!confirm('Delete this product? This cannot be undone.')) return;
+  try {
+    const res = await fetch(`${API_BASE}/products/${id}`, { method: 'DELETE' });
+    if (!res.ok) throw new Error(`Server responded ${res.status}`);
+    showToast('Product deleted');
+    await initShop();          // reload products from the database
+    renderAdminStats();
+    renderAdminTable();
+  } catch (e) {
+    alert('Could not delete product — ' + e.message);
+  }
 }
 
 async function resetStock() {
